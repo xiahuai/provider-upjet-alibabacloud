@@ -1,4 +1,4 @@
-apiVersion: vpc.crossplane.io/v1alpha1
+apiVersion: vpc.alibabacloud.crossplane.io/v1alpha1
 kind: VPC
 metadata:
   name: hello-crossplane-alibabacloud

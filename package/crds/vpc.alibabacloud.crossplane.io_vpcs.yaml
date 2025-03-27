@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.14.0
-  name: vpcs.vpc.crossplane.io
+  name: vpcs.vpc.alibabacloud.crossplane.io
 spec:
-  group: vpc.crossplane.io
+  group: vpc.alibabacloud.crossplane.io
   names:
     categories:
     - crossplane

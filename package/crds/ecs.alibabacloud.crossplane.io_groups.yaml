@@ -4,9 +4,9 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.14.0
-  name: groups.ecs.crossplane.io
+  name: groups.ecs.alibabacloud.crossplane.io
 spec:
-  group: ecs.crossplane.io
+  group: ecs.alibabacloud.crossplane.io
   names:
     categories:
     - crossplane

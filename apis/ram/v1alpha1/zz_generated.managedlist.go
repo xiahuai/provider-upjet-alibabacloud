@@ -71,6 +71,15 @@ func (l *LoginProfileList) GetItems() []resource.Managed {
 	return items
 }
 
+// GetItems of this PasswordPolicyList.
+func (l *PasswordPolicyList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
 // GetItems of this PolicyList.
 func (l *PolicyList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
@@ -109,6 +118,15 @@ func (l *SAMLProviderList) GetItems() []resource.Managed {
 
 // GetItems of this SecurityPreferenceList.
 func (l *SecurityPreferenceList) GetItems() []resource.Managed {
+	items := make([]resource.Managed, len(l.Items))
+	for i := range l.Items {
+		items[i] = &l.Items[i]
+	}
+	return items
+}
+
+// GetItems of this UserGroupAttachmentList.
+func (l *UserGroupAttachmentList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]

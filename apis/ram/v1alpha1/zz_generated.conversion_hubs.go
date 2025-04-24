@@ -28,6 +28,9 @@ func (tr *GroupPolicyAttachment) Hub() {}
 func (tr *LoginProfile) Hub() {}
 
 // Hub marks this type as a conversion hub.
+func (tr *PasswordPolicy) Hub() {}
+
+// Hub marks this type as a conversion hub.
 func (tr *Policy) Hub() {}
 
 // Hub marks this type as a conversion hub.
@@ -44,6 +47,9 @@ func (tr *SecurityPreference) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *User) Hub() {}
+
+// Hub marks this type as a conversion hub.
+func (tr *UserGroupAttachment) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *UserPolicyAttachment) Hub() {}

@@ -113,12 +113,14 @@ import (
 	groupmembership "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/groupmembership"
 	grouppolicyattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/grouppolicyattachment"
 	loginprofile "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/loginprofile"
+	passwordpolicy "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/passwordpolicy"
 	policy "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/policy"
 	role "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/role"
 	rolepolicyattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/rolepolicyattachment"
 	samlprovider "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/samlprovider"
 	securitypreference "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/securitypreference"
 	user "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/user"
+	usergroupattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/usergroupattachment"
 	userpolicyattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/userpolicyattachment"
 	accounttair "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/tair/account"
 	auditlogconfig "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/tair/auditlogconfig"
@@ -237,12 +239,14 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		groupmembership.Setup,
 		grouppolicyattachment.Setup,
 		loginprofile.Setup,
+		passwordpolicy.Setup,
 		policy.Setup,
 		role.Setup,
 		rolepolicyattachment.Setup,
 		samlprovider.Setup,
 		securitypreference.Setup,
 		user.Setup,
+		usergroupattachment.Setup,
 		userpolicyattachment.Setup,
 		accounttair.Setup,
 		auditlogconfig.Setup,

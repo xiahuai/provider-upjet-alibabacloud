@@ -24,9 +24,6 @@ type GroupInitParameters struct {
 	// The group name. You must specify at least one of the group_name and name.
 	// It can be 1 to 64 characters in length and can contain letters, digits, periods (.), underscores (_), and dashes (-).
 	GroupName *string `json:"groupName,omitempty" tf:"group_name,omitempty"`
-
-	// (Deprecated since v1.120.0). Field 'name' has been deprecated from provider version 1.120.0. New field 'group_name' instead.
-	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 }
 
 type GroupObservation struct {
@@ -46,9 +43,6 @@ type GroupObservation struct {
 
 	// The ID of the resource supplied above.
 	ID *string `json:"id,omitempty" tf:"id,omitempty"`
-
-	// (Deprecated since v1.120.0). Field 'name' has been deprecated from provider version 1.120.0. New field 'group_name' instead.
-	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 }
 
 type GroupParameters struct {
@@ -65,10 +59,6 @@ type GroupParameters struct {
 	// It can be 1 to 64 characters in length and can contain letters, digits, periods (.), underscores (_), and dashes (-).
 	// +kubebuilder:validation:Optional
 	GroupName *string `json:"groupName,omitempty" tf:"group_name,omitempty"`
-
-	// (Deprecated since v1.120.0). Field 'name' has been deprecated from provider version 1.120.0. New field 'group_name' instead.
-	// +kubebuilder:validation:Optional
-	Name *string `json:"name,omitempty" tf:"name,omitempty"`
 }
 
 // GroupSpec defines the desired state of Group

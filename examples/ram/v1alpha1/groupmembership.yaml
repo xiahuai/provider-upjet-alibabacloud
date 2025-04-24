@@ -25,7 +25,7 @@ metadata:
 spec:
   forProvider:
     comments: This is a test group for groupmembership created by provider-upjet-alibabacloud
-    name: test-group-for-groupmembership-1
+    groupName: test-group-for-groupmembership-1
 ---
 apiVersion: ram.alibabacloud.crossplane.io/v1alpha1
 kind: User

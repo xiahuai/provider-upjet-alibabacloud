@@ -10,4 +10,4 @@ metadata:
 spec:
   forProvider:
     comments: This is a group comment, created by provider-upjet-alibabacloud.
-    name: test-group-1
+    groupName: test-group-1

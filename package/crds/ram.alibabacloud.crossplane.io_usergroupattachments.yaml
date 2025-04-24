@@ -4,7 +4,7 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.14.0
-  name: groups.ram.alibabacloud.crossplane.io
+  name: usergroupattachments.ram.alibabacloud.crossplane.io
 spec:
   group: ram.alibabacloud.crossplane.io
   names:
@@ -12,10 +12,10 @@ spec:
     - crossplane
     - managed
     - alicloud
-    kind: Group
-    listKind: GroupList
-    plural: groups
-    singular: group
+    kind: UserGroupAttachment
+    listKind: UserGroupAttachmentList
+    plural: usergroupattachments
+    singular: usergroupattachment
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -34,8 +34,8 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Group is the Schema for the Groups API. Provides a Alicloud RAM
-          Group resource.
+        description: UserGroupAttachment is the Schema for the UserGroupAttachments
+          API. Provides a Alicloud RAM User Group Attachment resource.
         properties:
           apiVersion:
             description: |-
@@ -55,7 +55,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: GroupSpec defines the desired state of Group
+            description: UserGroupAttachmentSpec defines the desired state of UserGroupAttachment
             properties:
               deletionPolicy:
                 default: Delete
@@ -73,18 +73,11 @@ spec:
                 type: string
               forProvider:
                 properties:
-                  comments:
-                    description: The Group comment information. The maximum length
-                      is 128 characters.
-                    type: string
-                  force:
-                    description: 'Specifies whether to force delete the Group. Default
-                      value: false. Valid values:'
-                    type: boolean
                   groupName:
-                    description: |-
-                      The group name. You must specify at least one of the group_name and name.
-                      It can be 1 to 64 characters in length and can contain letters, digits, periods (.), underscores (_), and dashes (-).
+                    description: The name of group.
+                    type: string
+                  userName:
+                    description: The name of user.
                     type: string
                 type: object
               initProvider:
@@ -100,18 +93,11 @@ spec:
                   for example because of an external controller is managing them, like an
                   autoscaler.
                 properties:
-                  comments:
-                    description: The Group comment information. The maximum length
-                      is 128 characters.
-                    type: string
-                  force:
-                    description: 'Specifies whether to force delete the Group. Default
-                      value: false. Valid values:'
-                    type: boolean
                   groupName:
-                    description: |-
-                      The group name. You must specify at least one of the group_name and name.
-                      It can be 1 to 64 characters in length and can contain letters, digits, periods (.), underscores (_), and dashes (-).
+                    description: The name of group.
+                    type: string
+                  userName:
+                    description: The name of user.
                     type: string
                 type: object
               managementPolicies:
@@ -281,30 +267,29 @@ spec:
             required:
             - forProvider
             type: object
+            x-kubernetes-validations:
+            - message: spec.forProvider.groupName is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.groupName)
+                || (has(self.initProvider) && has(self.initProvider.groupName))'
+            - message: spec.forProvider.userName is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.userName)
+                || (has(self.initProvider) && has(self.initProvider.userName))'
           status:
-            description: GroupStatus defines the observed state of Group.
+            description: UserGroupAttachmentStatus defines the observed state of UserGroupAttachment.
             properties:
               atProvider:
                 properties:
-                  comments:
-                    description: The Group comment information. The maximum length
-                      is 128 characters.
-                    type: string
-                  createTime:
-                    description: (Available since v1.245.0) The create time of the
-                      group.
-                    type: string
-                  force:
-                    description: 'Specifies whether to force delete the Group. Default
-                      value: false. Valid values:'
-                    type: boolean
                   groupName:
-                    description: |-
-                      The group name. You must specify at least one of the group_name and name.
-                      It can be 1 to 64 characters in length and can contain letters, digits, periods (.), underscores (_), and dashes (-).
+                    description: The name of group.
                     type: string
                   id:
-                    description: The ID of the resource supplied above.
+                    description: The ID of the resource supplied above.The value is
+                      formulated as <group_name>:<user_name>.
+                    type: string
+                  userName:
+                    description: The name of user.
                     type: string
                 type: object
               conditions:

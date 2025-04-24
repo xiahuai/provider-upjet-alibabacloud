@@ -133,12 +133,14 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"alicloud_ram_group_membership":        config.IdentifierFromProvider,
 	"alicloud_ram_group_policy_attachment": config.IdentifierFromProvider,
 	"alicloud_ram_login_profile":           config.IdentifierFromProvider,
+	"alicloud_ram_password_policy":         config.IdentifierFromProvider,
 	"alicloud_ram_policy":                  config.IdentifierFromProvider,
 	"alicloud_ram_role":                    config.IdentifierFromProvider,
 	"alicloud_ram_role_policy_attachment":  config.IdentifierFromProvider,
 	"alicloud_ram_saml_provider":           config.IdentifierFromProvider,
 	"alicloud_ram_security_preference":     config.IdentifierFromProvider,
 	"alicloud_ram_user":                    config.IdentifierFromProvider,
+	"alicloud_ram_user_group_attachment":   config.IdentifierFromProvider,
 	"alicloud_ram_user_policy_attachment":  config.IdentifierFromProvider,
 
 	// Tair

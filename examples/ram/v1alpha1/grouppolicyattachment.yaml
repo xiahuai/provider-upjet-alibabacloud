@@ -24,7 +24,7 @@ metadata:
 spec:
   forProvider:
     comments: This is a test group for grouppolicyattachment created by provider-upjet-alibabacloud
-    name: test-group-for-grouppolicyattachment-1
+    groupName: test-group-for-grouppolicyattachment-1
 ---
 apiVersion: ram.alibabacloud.crossplane.io/v1alpha1
 kind: Policy

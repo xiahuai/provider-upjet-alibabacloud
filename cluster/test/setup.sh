@@ -26,5 +26,7 @@ spec:
       key: credentials
 EOF
 
+echo "Creating a login profile secret for RAM tests"
+
 ${KUBECTL} wait provider.pkg --all --for condition=Healthy --timeout 5m
 ${KUBECTL} -n upbound-system wait --for=condition=Available deployment --all --timeout=5m

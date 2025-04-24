@@ -29,7 +29,7 @@ spec:
     sourceSelectionCriteria:
     - sseKmsEncryptedObjects:
       - status: Enabled
-    syncRole: ${alicloud_ram_role.role.name}
+    syncRole: terraform-example
 
 ---
 
@@ -74,3 +74,58 @@ metadata:
 spec:
   forProvider:
     bucket: example-src-${random_integer.default.result}
+
+---
+
+apiVersion: ram.alibabacloud.crossplane.io/v1alpha1
+kind: Policy
+metadata:
+  annotations:
+    meta.upbound.io/example-id: oss/v1alpha1/bucketreplication
+  labels:
+    testing.upbound.io/example-name: policy
+  name: policy
+spec:
+  forProvider:
+    description: this is a policy test
+    force: true
+    policyDocument: "\t\t{\n\t\t  \"Statement\": [\n\t\t\t{\n\t\t\t  \"Action\": [\n\t\t\t\t\"*\"\n\t\t\t
+      \ ],\n\t\t\t  \"Effect\": \"Allow\",\n\t\t\t  \"Resource\": [\n\t\t\t\t\"*\"\n\t\t\t
+      \ ]\n\t\t\t}\n\t\t  ],\n\t\t\t\"Version\": \"1\"\n\t\t}\n"
+    policyName: example-policy-${random_integer.default.result}
+
+---
+
+apiVersion: ram.alibabacloud.crossplane.io/v1alpha1
+kind: Role
+metadata:
+  annotations:
+    meta.upbound.io/example-id: oss/v1alpha1/bucketreplication
+  labels:
+    testing.upbound.io/example-name: role
+  name: role
+spec:
+  forProvider:
+    description: this is a test
+    document: "\t\t{\n\t\t  \"Statement\": [\n\t\t\t{\n\t\t\t  \"Action\": \"sts:AssumeRole\",\n\t\t\t
+      \ \"Effect\": \"Allow\",\n\t\t\t  \"Principal\": {\n\t\t\t\t\"Service\": [\n\t\t\t\t
+      \ \"oss.aliyuncs.com\"\n\t\t\t\t]\n\t\t\t  }\n\t\t\t}\n\t\t  ],\n\t\t  \"Version\":
+      \"1\"\n\t\t}\n"
+    force: true
+    name: example-role-${random_integer.default.result}
+
+---
+
+apiVersion: ram.alibabacloud.crossplane.io/v1alpha1
+kind: RolePolicyAttachment
+metadata:
+  annotations:
+    meta.upbound.io/example-id: oss/v1alpha1/bucketreplication
+  labels:
+    testing.upbound.io/example-name: attach
+  name: attach
+spec:
+  forProvider:
+    policyName: example-policy-${random_integer.default.result}
+    policyType: ${alicloud_ram_policy.policy.type}
+    roleName: example-role-${random_integer.default.result}

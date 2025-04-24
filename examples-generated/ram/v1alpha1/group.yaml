@@ -1,0 +1,13 @@
+apiVersion: ram.alibabacloud.crossplane.io/v1alpha1
+kind: Group
+metadata:
+  annotations:
+    meta.upbound.io/example-id: ram/v1alpha1/group
+  labels:
+    testing.upbound.io/example-name: group
+  name: group
+spec:
+  forProvider:
+    comments: ${var.name}
+    force: true
+    groupName: ${var.name}

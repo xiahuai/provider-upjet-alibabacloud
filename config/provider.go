@@ -7,6 +7,7 @@ package config
 import (
 	// Note(turkenh): we are importing this to embed provider schema document
 	_ "embed"
+
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/alidns"
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/cdn"
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/cloudmonitorservice"
@@ -15,6 +16,7 @@ import (
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/messageservice"
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/oss"
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/polardb"
+	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/ram"
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/tair"
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/vpc"
 
@@ -52,6 +54,7 @@ func GetProvider() *ujconfig.Provider {
 		messageservice.Configure,
 		oss.Configure,
 		polardb.Configure,
+		ram.Configure,
 		tair.Configure,
 		vpc.Configure,
 	} {

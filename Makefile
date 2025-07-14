@@ -4,6 +4,19 @@
 PROJECT_NAME ?= provider-upjet-alibabacloud
 PROJECT_REPO ?= github.com/crossplane-contrib/$(PROJECT_NAME)
 
+# Family provider configuration
+PROVIDER_NAME := alibabacloud
+SUBPACKAGES ?= monolith
+
+# Family provider package resolution
+XPKG_SKIP_DEP_RESOLUTION := true
+
+# Batch processing variables (OCI-aligned)
+CONCURRENCY ?= 30
+DEP_CONSTRAINT ?= ">= 0.0.0-0"
+BUILD_ONLY ?= false
+STORE_PACKAGES ?= ""
+
 export TERRAFORM_VERSION ?= 1.5.7
 
 # Do not allow a version of terraform greater than 1.5.x, due to versions 1.6+ being
@@ -52,7 +65,7 @@ KUSTOMIZE_VERSION = v5.3.0
 YQ_VERSION = v4.40.5
 CROSSPLANE_VERSION = 1.19.0
 CRDDIFF_VERSION = v0.12.1
-GO_STATIC_PACKAGES = $(GO_PROJECT)/cmd/provider $(GO_PROJECT)/cmd/generator
+GO_STATIC_PACKAGES ?= $(GO_PROJECT)/cmd/generator ${SUBPACKAGES:%=$(GO_PROJECT)/cmd/provider/%}
 GO_LDFLAGS += -X $(GO_PROJECT)/internal/version.Version=$(VERSION)
 GO_SUBDIRS += cmd internal apis
 -include build/makelib/golang.mk
@@ -211,7 +224,7 @@ POLARDB=./examples/polardb/v1alpha1
 PRIVATELINK=./examples/privatelink/v1alpha1
 QUOTAS=./examples/quotas/v1alpha1
 RAM=./examples/ram/v1alpha1
-TAIT=./examples/tait/v1alpha1
+TAIR=./examples/tait/v1alpha1
 VPC=./examples/vpc/v1alpha1
 UPTEST_EXAMPLE_LIST_ACK=$(ACK)/autoscalingconfig.yaml,$(ACK)/edgekubernetes.yaml,$(ACK)/kubernetesaddon.yaml,$(ACK)/kubernetesnodepool.yaml,$(ACK)/kubernetespermissions.yaml,$(ACK)/managedkubernetes.yaml,$(ACK)/serverlesskubernetes.yaml
 UPTEST_EXAMPLE_LIST_ACKONE=$(ACKONE)/cluster.yaml,$(ACKONE)/membershipattachment.yaml
@@ -226,7 +239,7 @@ UPTEST_EXAMPLE_LIST_POLARDB=$(POLARDB)/account.yaml,$(POLARDB)/accountprivilege.
 UPTEST_EXAMPLE_LIST_PRIVATELINK=$(PRIVATELINK)/vpcendpoint.yaml,$(PRIVATELINK)/vpcendpointconnection.yaml,$(PRIVATELINK)/vpcendpointservice.yaml,$(PRIVATELINK)/vpcendpointserviceresource.yaml,$(PRIVATELINK)/vpcendpointserviceuser.yaml,$(PRIVATELINK)/vpcendpointservicezone.yaml
 UPTEST_EXAMPLE_LIST_QUOTAS=$(QUOTAS)/quotaalarm.yaml,$(QUOTAS)/quotaapplication.yaml,$(QUOTAS)/templateapplications.yaml,$(QUOTAS)/templatequota.yaml,$(QUOTAS)/templateservice.yaml
 UPTEST_EXAMPLE_LIST_RAM=$(RAM)/accesskey.yaml,$(RAM)/accountalias.yaml,$(RAM)/accountpasswordpolicy.yaml,$(RAM)/group.yaml,$(RAM)/groupmembership.yaml,$(RAM)/grouppolicyattachment.yaml,$(RAM)/loginprofile.yaml,$(RAM)/passwordpolicy.yaml,$(RAM)/policy.yaml,$(RAM)/role.yaml,$(RAM)/rolepolicyattachment.yaml,$(RAM)/samlprovider.yaml,$(RAM)/user.yaml,$(RAM)/usergroupattachment.yaml,$(RAM)/userpolicyattachment.yaml
-UPTEST_EXAMPLE_LIST_TAIT=$(TAIT)/account.yaml,$(TAIT)/auditlogconfig.yaml,$(TAIT)/connection.yaml,$(TAIT)/instance.yaml,$(TAIT)/tairinstance.yaml
+UPTEST_EXAMPLE_LIST_TAIR=$(TAIR)/account.yaml,$(TAIR)/auditlogconfig.yaml,$(TAIR)/connection.yaml,$(TAIR)/instance.yaml,$(TAIR)/tairinstance.yaml
 UPTEST_EXAMPLE_LIST_VPC=$(VPC)/vpc.yaml
 UPTEST_EXAMPLE_LIST=$(VPC)/vpc.yaml
 uptest: $(UPTEST) $(KUBECTL) $(CHAINSAW)
@@ -240,7 +253,55 @@ local-deploy: build controlplane.up local.xpkg.deploy.provider.$(PROJECT_NAME)
 	@$(KUBECTL) -n upbound-system wait --for=condition=Available deployment --all --timeout=5m
 	@$(OK) running locally built provider
 
-e2e: local-deploy uptest
+# Family provider build targets
+build-provider.%:
+	@$(MAKE) build SUBPACKAGES="$$(tr ',' ' ' <<< $*)" LOAD_PACKAGES=true
+
+# Build all family providers (convenience target)
+build-family:
+	@$(MAKE) build-provider.ack,ackone,alb,alidns,cdn,cloudmonitorservice,ecs,kms,messageservice,oss,polardb,privatelink,quotas,ram,tair,vpc
+
+# Family provider local deployment targets
+local-deploy.%: controlplane.up
+	@for api in $$(tr ',' ' ' <<< $*); do \
+		$(MAKE) local.xpkg.deploy.provider.$(PROJECT_NAME)-$${api}; \
+		$(INFO) running locally built $(PROJECT_NAME)-$${api}; \
+		$(KUBECTL) wait provider.pkg $(PROJECT_NAME)-$${api} --for condition=Healthy --timeout 5m; \
+		$(KUBECTL) -n upbound-system wait --for=condition=Available deployment --all --timeout=5m; \
+		$(OK) running locally built $(PROJECT_NAME)-$${api}; \
+	done || $(FAIL)
+
+# This target requires the following environment variables to be set:
+# - UPTEST_CLOUD_CREDENTIALS, cloud credentials for the provider being tested
+# - UPTEST_EXAMPLE_LIST, a comma-separated list of examples to test
+# - UPTEST_DATASOURCE_PATH, see https://github.com/crossplane/uptest#injecting-dynamic-values-and-datasource
+family-e2e:
+	@$(INFO) Removing everything under $(XPKG_OUTPUT_DIR) and $(OUTPUT_DIR)/cache...
+	@rm -fR $(XPKG_OUTPUT_DIR)
+	@rm -fR $(OUTPUT_DIR)/cache
+	@(INSTALL_APIS=""; \
+	for m in $$(tr ',' ' ' <<< $${UPTEST_EXAMPLE_LIST}); do \
+		$(INFO) Processing the example manifest "$${m}"; \
+		for api in $$(sed -nE 's/^apiVersion: *(.+)/\1/p' "$${m}" | cut -d. -f1); do \
+		    if [[ $${api} == "v1" ]]; then \
+		        $(INFO) v1 is not a valid provider. Skipping...; \
+		        continue; \
+		    fi; \
+			if [[ $${INSTALL_APIS} =~ " $${api} " ]]; then \
+				$(INFO) Resource provider $(PROJECT_NAME)-$${api} is already installed. Skipping...; \
+				continue; \
+			fi; \
+			$(INFO) Installing the family resource $(PROJECT_NAME)-$${api} for the test file: $${m}; \
+			INSTALL_APIS="$${INSTALL_APIS} $${api} "; \
+		done; \
+	done; \
+	INSTALL_APIS="$$(tr ' ' ',' <<< $${INSTALL_APIS})"; \
+	INSTALL_APIS="$$(tr -s ',' <<< "$${INSTALL_APIS}" | sed 's/^,//g' | sed 's/,$$//g')"; \
+	$(INFO) Building and deploying resource providers for the short API groups: $${INSTALL_APIS}; \
+	$(MAKE) build-provider.$${INSTALL_APIS} local-deploy.$${INSTALL_APIS}) || $(FAIL)
+	$(MAKE) uptest
+
+e2e: family-e2e
 
 crddiff: $(UPTEST)
 	@$(INFO) Checking breaking CRD schema changes

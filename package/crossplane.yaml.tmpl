@@ -1,0 +1,29 @@
+apiVersion: meta.pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: {{ .Name }}
+{{ if ne .Service "monolith" }}
+  labels:
+    pkg.crossplane.io/provider-family: provider-family-{{ .ProviderName }}
+{{ end }}
+  annotations:
+    meta.crossplane.io/maintainer: Crossplane Contributors <info@crossplane.io>
+    meta.crossplane.io/source: github.com/crossplane-contrib/provider-upjet-{{ .ProviderName }}
+    meta.crossplane.io/description: |
+      Crossplane provider for Alibaba Cloud {{ .Service }} services.
+      {{ if eq .Service "monolith" }}
+      This is the monolithic package containing all Alibaba Cloud services.
+      {{ else if eq .Service "config" }}
+      This is the base family provider configuration package.
+      {{ else }}
+      This package contains resources for the {{ .Service }} service group.
+      {{ end }}
+    friendly-name.meta.crossplane.io: Provider Alibaba Cloud ({{ .Service }})
+spec:
+  crossplane:
+    version: ">=v1.19.0-0"
+{{ if and (ne .Service "config") (ne .Service "monolith") }}
+  dependsOn:
+    - provider: {{ .XpkgRegOrg }}/provider-family-{{ .ProviderName }}
+      version: {{ .DepConstraint }}
+{{ end }}

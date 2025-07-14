@@ -1,6 +1,13 @@
 # ====================================================================================
 # Setup Project
 
+# Project variables (align with main Makefile)
+PROJECT_NAME ?= provider-upjet-alibabacloud
+PROVIDER_NAME ?= alibabacloud
+XPKG_REG_ORGS ?= xpkg.upbound.io/crossplane-contrib
+DEP_CONSTRAINT ?= ">= 0.0.0-0"
+CONCURRENCY ?= 30
+
 include ../../../build/makelib/common.mk
 
 # ====================================================================================
@@ -12,8 +19,20 @@ include ../../../build/makelib/imagelight.mk
 # Targets
 
 img.build:
-	@$(INFO) docker build $(IMAGE)
-	@$(MAKE) BUILD_ARGS="--load" img.build.shared
+	@$(INFO) Family base image to build: $(IMAGE)
+	@$(INFO) Building image $(IMAGE); \
+	$(MAKE) BUILD_ARGS="--load " IMAGE=$(IMAGE) XPKG_REG_ORGS=$(XPKG_REG_ORGS) img.build.shared; \
+	if [[ "$(LOAD_PACKAGES)" == "true" ]]; then \
+		$(MAKE) batch-process SUBPACKAGES="$(SUBPACKAGES)" BATCH_PLATFORMS=$(PLATFORM) BUILD_ONLY=true STORE_PACKAGES="$(tr ' ' ',' <<< "$(SUBPACKAGES)")" && \
+		for s in $(SUBPACKAGES); do \
+			if [ -f "$(ROOT_DIR)/_output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$${s}-$(VERSION).xpkg" ]; then \
+				export t=$$(docker load -qi "$(ROOT_DIR)/_output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$${s}-$(VERSION).xpkg") && \
+				docker tag $${t##*:} $(BUILD_REGISTRY)/$(PROJECT_NAME)-$${s}-$(subst _,-,$(PLATFORM)):latest; \
+			else \
+				echo "Package not found: $(ROOT_DIR)/_output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$${s}-$(VERSION).xpkg"; \
+			fi; \
+		done; \
+	fi || $(FAIL)
 	@$(OK) docker build $(IMAGE)
 
 img.publish:
@@ -40,3 +59,27 @@ img.promote:
 	@$(INFO) Skipping image promotion from $(FROM_IMAGE) to $(TO_IMAGE)
 	@echo Promote is deferred to xpkg machinery
 	@$(OK) Image promotion skipped for $(FROM_IMAGE) to $(TO_IMAGE)
+
+# Family provider batch processing (OCI-aligned)
+batch-process: $(UP)
+	@$(INFO) Batch processing smaller provider packages for: "$(SUBPACKAGES)"
+	@mkdir -p "$(OUTPUT_DIR)/xpkg/$(PLATFORM)" && \
+	$(UP) xpkg batch --smaller-providers "$$(tr ' ' ',' <<< "$(SUBPACKAGES)")" \
+		--family-base-image $(BUILD_REGISTRY)/$(PROJECT_NAME) \
+		--platform $(PLATFORM) \
+		--provider-name $(PROJECT_NAME) \
+		--family-package-url-format $(XPKG_REG_ORGS)/%s:$(VERSION) \
+		--package-repo-override monolith=$(PROJECT_NAME) --package-repo-override config=provider-family-$(PROVIDER_NAME) \
+		--provider-bin-root $(OUTPUT_DIR)/bin \
+		--output-dir $(OUTPUT_DIR)/xpkg \
+		--store-packages "$(STORE_PACKAGES)" \
+		--build-only=$(BUILD_ONLY) \
+		--examples-root $(ROOT_DIR)/examples \
+		--examples-group-override monolith=* --examples-group-override config=providerconfig \
+		--crd-root $(ROOT_DIR)/package/crds \
+		--crd-group-override monolith=* --crd-group-override config=$(PROVIDER_NAME) \
+		--package-metadata-template $(ROOT_DIR)/package/crossplane.yaml.tmpl \
+		--template-var XpkgRegOrg=$(XPKG_REG_ORGS) --template-var DepConstraint='$(DEP_CONSTRAINT)' --template-var ProviderName=$(PROVIDER_NAME) \
+		--concurrency $(CONCURRENCY) \
+		--push-retry 10 || $(FAIL)
+	@$(OK) Done processing smaller provider packages for: "$(SUBPACKAGES)"

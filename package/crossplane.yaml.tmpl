@@ -25,5 +25,5 @@ spec:
 {{ if and (ne .Service "config") (ne .Service "monolith") }}
   dependsOn:
     - provider: {{ .XpkgRegOrg }}/provider-family-{{ .ProviderName }}
-      version: {{ .DepConstraint }}
+      version: "{{ .DepConstraint }}"
 {{ end }}

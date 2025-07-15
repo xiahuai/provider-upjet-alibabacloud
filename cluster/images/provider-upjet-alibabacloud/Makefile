@@ -5,7 +5,10 @@
 PROJECT_NAME ?= provider-upjet-alibabacloud
 PROVIDER_NAME ?= alibabacloud
 XPKG_REG_ORGS ?= xpkg.upbound.io/crossplane-contrib
-DEP_CONSTRAINT ?= ">= 0.0.0-0"
+DEP_CONSTRAINT := >= 0.0.0
+ifeq (-,$(findstring -,$(VERSION)))
+    DEP_CONSTRAINT = >= 0.0.0-0
+endif
 CONCURRENCY ?= 30
 
 include ../../../build/makelib/common.mk
@@ -79,7 +82,7 @@ batch-process: $(UP)
 		--crd-root $(ROOT_DIR)/package/crds \
 		--crd-group-override monolith=* --crd-group-override config=$(PROVIDER_NAME) \
 		--package-metadata-template $(ROOT_DIR)/package/crossplane.yaml.tmpl \
-		--template-var XpkgRegOrg=$(XPKG_REG_ORGS) --template-var DepConstraint='$(DEP_CONSTRAINT)' --template-var ProviderName=$(PROVIDER_NAME) \
+		--template-var XpkgRegOrg=$(XPKG_REG_ORGS) --template-var DepConstraint="$(DEP_CONSTRAINT)" --template-var ProviderName=$(PROVIDER_NAME) \
 		--concurrency $(CONCURRENCY) \
 		--push-retry 10 || $(FAIL)
 	@$(OK) Done processing smaller provider packages for: "$(SUBPACKAGES)"

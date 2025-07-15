@@ -13,7 +13,6 @@ XPKG_SKIP_DEP_RESOLUTION := true
 
 # Batch processing variables (OCI-aligned)
 CONCURRENCY ?= 30
-DEP_CONSTRAINT ?= ">= 0.0.0-0"
 BUILD_ONLY ?= false
 STORE_PACKAGES ?= ""
 
@@ -301,7 +300,20 @@ family-e2e:
 	$(MAKE) build-provider.$${INSTALL_APIS} local-deploy.$${INSTALL_APIS}) || $(FAIL)
 	$(MAKE) uptest
 
-e2e: family-e2e
+# e2e: Run end-to-end tests with monolith provider
+e2e: e2e-monolith
+
+e2e-monolith:
+	@$(INFO) Running e2e tests with monolith provider
+	@$(MAKE) build-provider.monolith local-deploy.monolith
+	@$(MAKE) uptest
+
+# e2e-provider.%: Run end-to-end tests with specific provider families
+# Usage: make e2e-provider.vpc or make e2e-provider.ecs,vpc
+e2e-provider.%:
+	@$(INFO) Running e2e tests with provider families: $*
+	@$(MAKE) build-provider.$* local-deploy.$*
+	@$(MAKE) uptest
 
 crddiff: $(UPTEST)
 	@$(INFO) Checking breaking CRD schema changes
@@ -330,7 +342,34 @@ schema-version-diff:
 	./scripts/version_diff.py config/generated.lst "$(WORK_DIR)/schema.json.$${PREV_PROVIDER_VERSION}" config/schema.json
 	@$(OK) Checking for native state schema version changes
 
-.PHONY: cobertura submodules fallthrough run crds.clean
+# ====================================================================================
+# Family Provider Publishing
+
+# publish-family-provider: Publish a smaller scoped provider to Upbound Marketplace
+# Usage: make publish-family-provider PROVIDER_SERVICE=vpc
+# This will build package and prepare for publishing
+publish-family-provider: build-provider.$(PROVIDER_SERVICE)
+	@$(INFO) Publishing family provider: $(PROJECT_NAME)-$(PROVIDER_SERVICE)
+	@if [ -z "$(PROVIDER_SERVICE)" ]; then \
+		echo "Error: PROVIDER_SERVICE must be specified (e.g., PROVIDER_SERVICE=vpc)"; \
+		exit 1; \
+	fi
+	@$(INFO) Step 1: Checking if repository exists...
+	@if ! up repository get $(PROJECT_NAME)-$(PROVIDER_SERVICE) >/dev/null 2>&1; then \
+		echo "Repository $(PROJECT_NAME)-$(PROVIDER_SERVICE) does not exist."; \
+		echo "To create it, run: up repository create $(PROJECT_NAME)-$(PROVIDER_SERVICE) --public"; \
+		exit 1; \
+	else \
+		$(INFO) Repository $(PROJECT_NAME)-$(PROVIDER_SERVICE) exists; \
+	fi
+	@$(INFO) Step 2: Building package complete
+	@$(INFO) Step 3: Package ready for publishing at:
+	@echo "  _output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$(PROVIDER_SERVICE)-$(VERSION).xpkg"
+	@$(INFO) Step 4: To publish, run:
+	@echo "  crossplane xpkg push $(XPKG_REG_ORGS)/$(PROJECT_NAME)-$(PROVIDER_SERVICE):$(VERSION) -f _output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$(PROVIDER_SERVICE)-$(VERSION).xpkg"
+	@$(OK) Family provider $(PROJECT_NAME)-$(PROVIDER_SERVICE) ready for publishing
+
+.PHONY: cobertura submodules fallthrough run crds.clean publish-family-provider
 
 # ====================================================================================
 # Special Targets
@@ -351,7 +390,7 @@ crossplane.help:
 
 help-special: crossplane.help
 
-.PHONY: crossplane.help help-special
+.PHONY: crossplane.help help-special publish-family-provider
 
 # TODO(negz): Update CI to use these targets.
 vendor: modules.download

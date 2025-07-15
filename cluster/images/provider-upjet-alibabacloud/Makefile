@@ -1,16 +1,6 @@
 # ====================================================================================
 # Setup Project
 
-# Project variables (align with main Makefile)
-PROJECT_NAME ?= provider-upjet-alibabacloud
-PROVIDER_NAME ?= alibabacloud
-XPKG_REG_ORGS ?= xpkg.upbound.io/crossplane-contrib
-DEP_CONSTRAINT := >= 0.0.0
-ifeq (-,$(findstring -,$(VERSION)))
-    DEP_CONSTRAINT = >= 0.0.0-0
-endif
-CONCURRENCY ?= 30
-
 include ../../../build/makelib/common.mk
 
 # ====================================================================================
@@ -19,29 +9,30 @@ include ../../../build/makelib/common.mk
 include ../../../build/makelib/imagelight.mk
 
 # ====================================================================================
+# Setup k8s tools
+
+-include ../../../build/makelib/k8s_tools.mk
+
+# ====================================================================================
+# Setup xpkg
+
+-include ../../../build/makelib/xpkg.mk
+
+# ====================================================================================
 # Targets
 
 img.build:
 	@$(INFO) Family base image to build: $(IMAGE)
-	@$(INFO) Building image $(IMAGE); \
-	$(MAKE) BUILD_ARGS="--load " IMAGE=$(IMAGE) XPKG_REG_ORGS=$(XPKG_REG_ORGS) img.build.shared; \
-	if [[ "$(LOAD_PACKAGES)" == "true" ]]; then \
-		$(MAKE) batch-process SUBPACKAGES="$(SUBPACKAGES)" BATCH_PLATFORMS=$(PLATFORM) BUILD_ONLY=true STORE_PACKAGES="$(tr ' ' ',' <<< "$(SUBPACKAGES)")" && \
+	@$(INFO) Building image $${IMAGE}; \
+	$(MAKE) BUILD_ARGS="--load ${BUILD_ARGS}" IMAGE=$${IMAGE} XPKG_REG_ORGS=$(XPKG_REG_ORGS) img.build.shared; \
+	if [[ "$${LOAD_PACKAGES}" == "true" ]]; then \
+		$(MAKE) batch-process SUBPACKAGES="$(SUBPACKAGES)" XPKG_DIR=$(XPKG_DIR) XPKG_IGNORE=$(XPKG_IGNORE) BATCH_PLATFORMS=$(PLATFORM) BUILD_ONLY=true STORE_PACKAGES="$$(tr ' ' ',' <<< "$(SUBPACKAGES)")" && \
 		for s in $(SUBPACKAGES); do \
-			if [ -f "$(ROOT_DIR)/_output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$${s}-$(VERSION).xpkg" ]; then \
-				export t=$$(docker load -qi "$(ROOT_DIR)/_output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$${s}-$(VERSION).xpkg") && \
-				docker tag $${t##*:} $(BUILD_REGISTRY)/$(PROJECT_NAME)-$${s}-$(subst _,-,$(PLATFORM)):latest; \
-			else \
-				echo "Package not found: $(ROOT_DIR)/_output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$${s}-$(VERSION).xpkg"; \
-			fi; \
+			export t=$$(docker load -qi "$(XPKG_OUTPUT_DIR)/$(PLATFORM)/$(PROJECT_NAME)-$${s}-$(VERSION).xpkg") && \
+			docker tag $${t##*:} $(BUILD_REGISTRY)/$(PROJECT_NAME)-$${s}-$(ARCH); \
 		done; \
 	fi || $(FAIL)
-	@$(OK) docker build $(IMAGE)
-
-img.publish:
-	@$(INFO) Skipping image publish for $(IMAGE)
-	@echo Publish is deferred to xpkg machinery
-	@$(OK) Image publish skipped for $(IMAGE)
+	@$(OK) docker build $${IMAGE}
 
 img.build.shared:
 	@cp Dockerfile $(IMAGE_TEMP_DIR) || $(FAIL)
@@ -58,23 +49,31 @@ img.build.shared:
 		-t $(IMAGE) \
 		$(IMAGE_TEMP_DIR) || $(FAIL)
 
+img.publish: batch-process
+
 img.promote:
 	@$(INFO) Skipping image promotion from $(FROM_IMAGE) to $(TO_IMAGE)
 	@echo Promote is deferred to xpkg machinery
 	@$(OK) Image promotion skipped for $(FROM_IMAGE) to $(TO_IMAGE)
 
-# Family provider batch processing (OCI-aligned)
+CONCURRENCY ?= 30
+DEP_CONSTRAINT := >= 0.0.0
+ifeq (-,$(findstring -,$(VERSION)))
+    DEP_CONSTRAINT = >= 0.0.0-0
+endif
+BUILD_ONLY ?= false
+STORE_PACKAGES ?= ""
 batch-process: $(UP)
 	@$(INFO) Batch processing smaller provider packages for: "$(SUBPACKAGES)"
-	@mkdir -p "$(OUTPUT_DIR)/xpkg/$(PLATFORM)" && \
+	@mkdir -p "$(XPKG_OUTPUT_DIR)/$(PLATFORM)" && \
 	$(UP) xpkg batch --smaller-providers "$$(tr ' ' ',' <<< "$(SUBPACKAGES)")" \
 		--family-base-image $(BUILD_REGISTRY)/$(PROJECT_NAME) \
-		--platform $(PLATFORM) \
+		--platform $(BATCH_PLATFORMS) \
 		--provider-name $(PROJECT_NAME) \
 		--family-package-url-format $(XPKG_REG_ORGS)/%s:$(VERSION) \
 		--package-repo-override monolith=$(PROJECT_NAME) --package-repo-override config=provider-family-$(PROVIDER_NAME) \
 		--provider-bin-root $(OUTPUT_DIR)/bin \
-		--output-dir $(OUTPUT_DIR)/xpkg \
+		--output-dir $(XPKG_OUTPUT_DIR) \
 		--store-packages "$(STORE_PACKAGES)" \
 		--build-only=$(BUILD_ONLY) \
 		--examples-root $(ROOT_DIR)/examples \

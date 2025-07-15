@@ -19,7 +19,8 @@ import (
 	serverlesskubernetes "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/serverlesskubernetes"
 )
 
-// Setup_ack creates all ACK controllers for the ACK family provider.
+// Setup_ack creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_ack(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		autoscalingconfig.Setup,

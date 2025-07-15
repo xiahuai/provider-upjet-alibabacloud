@@ -16,7 +16,8 @@ import (
 	tairinstance "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/tair/tairinstance"
 )
 
-// Setup_tair creates all TAIR controllers for the TAIR family provider.
+// Setup_tair creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_tair(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		account.Setup,

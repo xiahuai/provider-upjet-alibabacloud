@@ -36,7 +36,8 @@ import (
 	bucketworm "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/oss/bucketworm"
 )
 
-// Setup_oss creates all OSS controllers for the OSS family provider.
+// Setup_oss creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_oss(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		accesspoint.Setup,

@@ -16,7 +16,8 @@ import (
 	templateservice "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/quotas/templateservice"
 )
 
-// Setup_quotas creates all QUOTAS controllers for the QUOTAS family provider.
+// Setup_quotas creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_quotas(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		quotaalarm.Setup,

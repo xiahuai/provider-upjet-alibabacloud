@@ -20,7 +20,8 @@ import (
 	record "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alidns/record"
 )
 
-// Setup_alidns creates all ALIDNS controllers for the ALIDNS family provider.
+// Setup_alidns creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_alidns(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		addresspool.Setup,

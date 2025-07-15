@@ -15,7 +15,8 @@ import (
 	secret "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/kms/secret"
 )
 
-// Setup_kms creates all KMS controllers for the KMS family provider.
+// Setup_kms creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_kms(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		alias.Setup,

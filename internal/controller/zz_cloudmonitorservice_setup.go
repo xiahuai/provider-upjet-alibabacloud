@@ -9,14 +9,14 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	providerconfig "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/providerconfig"
+	alarmcontactgroup "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/cloudmonitorservice/alarmcontactgroup"
 )
 
-// Setup_config creates the provider configuration controller for the family provider base.
-// This only includes the ProviderConfig controller needed for family provider dependencies.
-func Setup_config(mgr ctrl.Manager, o controller.Options) error {
+// Setup_cloudmonitorservice creates all controllers with the supplied logger and adds them to
+// the supplied manager.
+func Setup_cloudmonitorservice(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		providerconfig.Setup,
+		alarmcontactgroup.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

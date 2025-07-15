@@ -16,7 +16,8 @@ import (
 	topic "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/messageservice/topic"
 )
 
-// Setup_messageservice creates all MESSAGESERVICE controllers for the MESSAGESERVICE family provider.
+// Setup_messageservice creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_messageservice(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		endpoint.Setup,

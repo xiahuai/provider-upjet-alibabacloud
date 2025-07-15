@@ -17,7 +17,8 @@ import (
 	vpcendpointzone "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/privatelink/vpcendpointzone"
 )
 
-// Setup_privatelink creates all PRIVATELINK controllers for the PRIVATELINK family provider.
+// Setup_privatelink creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_privatelink(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		vpcendpoint.Setup,

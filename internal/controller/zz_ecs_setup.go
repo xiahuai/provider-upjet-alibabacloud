@@ -49,7 +49,8 @@ import (
 	storagecapacityunit "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ecs/storagecapacityunit"
 )
 
-// Setup_ecs creates all ECS controllers for the ECS family provider.
+// Setup_ecs creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_ecs(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		activation.Setup,

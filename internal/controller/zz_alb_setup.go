@@ -23,7 +23,8 @@ import (
 	servergroup "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/servergroup"
 )
 
-// Setup_alb creates all ALB controllers for the ALB family provider.
+// Setup_alb creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_alb(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		acl.Setup,

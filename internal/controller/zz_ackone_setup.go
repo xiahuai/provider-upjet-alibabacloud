@@ -13,7 +13,8 @@ import (
 	membershipattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ackone/membershipattachment"
 )
 
-// Setup_ackone creates all ACKONE controllers for the ACKONE family provider.
+// Setup_ackone creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_ackone(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		cluster.Setup,

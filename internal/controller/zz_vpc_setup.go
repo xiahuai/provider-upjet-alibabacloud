@@ -9,13 +9,16 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	alarmcontactgroup "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/cloudmonitorservice/alarmcontactgroup"
+	vpc "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/vpc/vpc"
+	vswitch "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/vpc/vswitch"
 )
 
-// Setup_cloudmonitorservice creates all CLOUDMONITORSERVICE controllers for the CLOUDMONITORSERVICE family provider.
-func Setup_cloudmonitorservice(mgr ctrl.Manager, o controller.Options) error {
+// Setup_vpc creates all controllers with the supplied logger and adds them to
+// the supplied manager.
+func Setup_vpc(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		alarmcontactgroup.Setup,
+		vpc.Setup,
+		vswitch.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

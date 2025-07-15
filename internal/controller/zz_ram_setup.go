@@ -27,7 +27,8 @@ import (
 	userpolicyattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ram/userpolicyattachment"
 )
 
-// Setup_ram creates all RAM controllers for the RAM family provider.
+// Setup_ram creates all controllers with the supplied logger and adds them to
+// the supplied manager.
 func Setup_ram(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		accesskey.Setup,

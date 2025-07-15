@@ -25,6 +25,7 @@ import (
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/ram"
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/tair"
 	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/vpc"
+	"github.com/crossplane-contrib/provider-upjet-alibabacloud/hack"
 	"github.com/crossplane/upjet/pkg/registry/reference"
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
@@ -59,6 +60,7 @@ func GetProvider() *ujconfig.Provider {
 		ujconfig.WithIncludeList(ExternalNameConfigured()),
 		ujconfig.WithReferenceInjectors([]ujconfig.ReferenceInjector{reference.NewInjector(modulePath)}),
 		ujconfig.WithFeaturesPackage("internal/features"),
+		ujconfig.WithMainTemplate(hack.MainTemplate),
 		ujconfig.WithDefaultResourceOptions(defaultResourceOptions...))
 
 	for _, configure := range []func(provider *ujconfig.Provider){

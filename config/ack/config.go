@@ -136,6 +136,8 @@ func Configure(p *config.Provider) {
 			IgnoredFields: []string{
 				// Deprecated
 				"cis_enabled",
+				"image_id",
+				"image_config",
 				"platform",
 				"node_count",
 				"rollout_policy",

@@ -119,6 +119,7 @@ func (tr *KubernetesNodePool) LateInitialize(attrs []byte) (bool, error) {
 	}
 	opts := []resource.GenericLateInitializerOption{resource.WithZeroValueJSONOmitEmptyFilter(resource.CNameWildcard)}
 	opts = append(opts, resource.WithNameFilter("CisEnabled"))
+	opts = append(opts, resource.WithNameFilter("ImageID"))
 	opts = append(opts, resource.WithNameFilter("Name"))
 	opts = append(opts, resource.WithNameFilter("NodeCount"))
 	opts = append(opts, resource.WithNameFilter("Platform"))

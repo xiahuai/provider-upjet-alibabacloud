@@ -221,6 +221,7 @@ func Configure(p *config.Provider) {
 				"os_type",
 				"platform",
 				"image_id",
+				"image_type",
 				"cpu_policy",
 				"user_data",
 				"taints",

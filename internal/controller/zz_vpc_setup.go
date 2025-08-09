@@ -9,6 +9,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
+	routetable "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/vpc/routetable"
 	vpc "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/vpc/vpc"
 	vswitch "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/vpc/vswitch"
 )
@@ -17,6 +18,7 @@ import (
 // the supplied manager.
 func Setup_vpc(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
+		routetable.Setup,
 		vpc.Setup,
 		vswitch.Setup,
 	} {

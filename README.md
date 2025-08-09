@@ -21,3 +21,8 @@ export UPTEST_CLOUD_CREDENTIALS='{
     "region": "us-west-1"
 }'
 ```
+
+## Submit PR
+
+- `make reviewable` before submitting a new PR
+- git commit -s -m "sign every commit"

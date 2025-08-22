@@ -66,7 +66,6 @@ batch-process: $(UP)
 	@$(INFO) Batch processing smaller provider packages for: "$(SUBPACKAGES)"
 	@mkdir -p "$(XPKG_OUTPUT_DIR)/$(PLATFORM)" && \
 	$(UP) xpkg batch --smaller-providers "$$(tr ' ' ',' <<< "$(SUBPACKAGES)")" \
-		--verbose \
 		--family-base-image $(BUILD_REGISTRY)/$(PROJECT_NAME) \
 		--platform $(BATCH_PLATFORMS) \
 		--provider-name $(PROJECT_NAME) \

@@ -1,11 +1,11 @@
 # ====================================================================================
 # Setup Project
 
-export PROJECT_NAME ?= provider-upjet-alibabacloud
-PROJECT_REPO ?= github.com/crossplane-contrib/$(PROJECT_NAME)
-
 # Family provider configuration
 export PROVIDER_NAME := alibabacloud
+PROJECT_NAME := provider-$(PROVIDER_NAME)
+PROJECT_REPO ?= github.com/crossplane-contrib/$(PROJECT_NAME)
+
 SUBPACKAGES ?= monolith
 
 # Family provider package resolution

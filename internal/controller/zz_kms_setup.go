@@ -9,10 +9,10 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	alias "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/kms/alias"
-	instance "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/kms/instance"
-	key "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/kms/key"
-	secret "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/kms/secret"
+	alias "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/kms/alias"
+	instance "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/kms/instance"
+	key "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/kms/key"
+	secret "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/kms/secret"
 )
 
 // Setup_kms creates all controllers with the supplied logger and adds them to

@@ -37,7 +37,7 @@ type VpcEndpointInitParameters struct {
 	ResourceGroupID *string `json:"resourceGroupId,omitempty" tf:"resource_group_id,omitempty"`
 
 	// The ID of the security group that is associated with the endpoint ENI. The security group can be used to control data transfer between the VPC and the endpoint ENI.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupSelector
 	// +listType=set
@@ -52,7 +52,7 @@ type VpcEndpointInitParameters struct {
 	SecurityGroupSelector *v1.Selector `json:"securityGroupSelector,omitempty" tf:"-"`
 
 	// The ID of the endpoint service with which the endpoint is associated.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/privatelink/v1alpha1.VPCEndpointService
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/privatelink/v1alpha1.VPCEndpointService
 	ServiceID *string `json:"serviceId,omitempty" tf:"service_id,omitempty"`
 
 	// Reference to a VPCEndpointService in privatelink to populate serviceId.
@@ -74,7 +74,7 @@ type VpcEndpointInitParameters struct {
 	VPCEndpointName *string `json:"vpcEndpointName,omitempty" tf:"vpc_endpoint_name,omitempty"`
 
 	// The ID of the VPC to which the endpoint belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -196,7 +196,7 @@ type VpcEndpointParameters struct {
 	ResourceGroupID *string `json:"resourceGroupId,omitempty" tf:"resource_group_id,omitempty"`
 
 	// The ID of the security group that is associated with the endpoint ENI. The security group can be used to control data transfer between the VPC and the endpoint ENI.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupSelector
 	// +kubebuilder:validation:Optional
@@ -212,7 +212,7 @@ type VpcEndpointParameters struct {
 	SecurityGroupSelector *v1.Selector `json:"securityGroupSelector,omitempty" tf:"-"`
 
 	// The ID of the endpoint service with which the endpoint is associated.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/privatelink/v1alpha1.VPCEndpointService
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/privatelink/v1alpha1.VPCEndpointService
 	// +kubebuilder:validation:Optional
 	ServiceID *string `json:"serviceId,omitempty" tf:"service_id,omitempty"`
 
@@ -238,7 +238,7 @@ type VpcEndpointParameters struct {
 	VPCEndpointName *string `json:"vpcEndpointName,omitempty" tf:"vpc_endpoint_name,omitempty"`
 
 	// The ID of the VPC to which the endpoint belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 

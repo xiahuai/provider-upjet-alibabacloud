@@ -44,7 +44,7 @@ type SecurityGroupRuleInitParameters struct {
 	Priority *float64 `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// The ID of the Security Group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate securityGroupId.
@@ -59,7 +59,7 @@ type SecurityGroupRuleInitParameters struct {
 	SourceGroupOwnerAccount *string `json:"sourceGroupOwnerAccount,omitempty" tf:"source_group_owner_account,omitempty"`
 
 	// The target security group ID within the same region. If this field is specified, the nic_type can only select intranet.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	SourceSecurityGroupID *string `json:"sourceSecurityGroupId,omitempty" tf:"source_security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate sourceSecurityGroupId.
@@ -169,7 +169,7 @@ type SecurityGroupRuleParameters struct {
 	Region *string `json:"region,omitempty" tf:"-"`
 
 	// The ID of the Security Group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
@@ -186,7 +186,7 @@ type SecurityGroupRuleParameters struct {
 	SourceGroupOwnerAccount *string `json:"sourceGroupOwnerAccount,omitempty" tf:"source_group_owner_account,omitempty"`
 
 	// The target security group ID within the same region. If this field is specified, the nic_type can only select intranet.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +kubebuilder:validation:Optional
 	SourceSecurityGroupID *string `json:"sourceSecurityGroupId,omitempty" tf:"source_security_group_id,omitempty"`
 

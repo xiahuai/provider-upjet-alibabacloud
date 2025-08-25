@@ -9,9 +9,9 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	routetable "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/vpc/routetable"
-	vpc "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/vpc/vpc"
-	vswitch "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/vpc/vswitch"
+	routetable "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/vpc/routetable"
+	vpc "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/vpc/vpc"
+	vswitch "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/vpc/vswitch"
 )
 
 // Setup_vpc creates all controllers with the supplied logger and adds them to

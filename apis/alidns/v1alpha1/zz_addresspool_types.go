@@ -81,7 +81,7 @@ type AddressPoolInitParameters struct {
 	AddressPoolName *string `json:"addressPoolName,omitempty" tf:"address_pool_name,omitempty"`
 
 	// The ID of the instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.GtmInstance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.GtmInstance
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
 	// Reference to a GtmInstance in alidns to populate instanceId.
@@ -130,7 +130,7 @@ type AddressPoolParameters struct {
 	AddressPoolName *string `json:"addressPoolName,omitempty" tf:"address_pool_name,omitempty"`
 
 	// The ID of the instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.GtmInstance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.GtmInstance
 	// +kubebuilder:validation:Optional
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 

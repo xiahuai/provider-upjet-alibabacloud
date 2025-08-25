@@ -22,7 +22,7 @@ type BucketRefererInitParameters struct {
 	AllowTruncateQueryString *bool `json:"allowTruncateQueryString,omitempty" tf:"allow_truncate_query_string,omitempty"`
 
 	// Name of the Bucket.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 
 	// Reference to a Bucket in oss to populate bucket.
@@ -82,7 +82,7 @@ type BucketRefererParameters struct {
 	AllowTruncateQueryString *bool `json:"allowTruncateQueryString,omitempty" tf:"allow_truncate_query_string,omitempty"`
 
 	// Name of the Bucket.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +kubebuilder:validation:Optional
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 

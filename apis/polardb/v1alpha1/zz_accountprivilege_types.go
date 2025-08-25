@@ -16,8 +16,8 @@ import (
 type AccountPrivilegeInitParameters struct {
 
 	// A specified account name.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Account
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.AccountNameExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Account
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.AccountNameExtractor()
 	AccountName *string `json:"accountName,omitempty" tf:"account_name,omitempty"`
 
 	// Reference to a Account in polardb to populate accountName.
@@ -32,8 +32,8 @@ type AccountPrivilegeInitParameters struct {
 	AccountPrivilege *string `json:"accountPrivilege,omitempty" tf:"account_privilege,omitempty"`
 
 	// The Id of cluster in which account belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Cluster
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Cluster
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	DBClusterID *string `json:"dbClusterId,omitempty" tf:"db_cluster_id,omitempty"`
 
 	// Reference to a Cluster in polardb to populate dbClusterId.
@@ -45,7 +45,7 @@ type AccountPrivilegeInitParameters struct {
 	DBClusterIDSelector *v1.Selector `json:"dbClusterIdSelector,omitempty" tf:"-"`
 
 	// List of specified database name.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Database
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Database
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("db_name",false)
 	// +listType=set
 	DBNames []*string `json:"dbNames,omitempty" tf:"db_names,omitempty"`
@@ -81,8 +81,8 @@ type AccountPrivilegeObservation struct {
 type AccountPrivilegeParameters struct {
 
 	// A specified account name.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Account
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.AccountNameExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Account
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.AccountNameExtractor()
 	// +kubebuilder:validation:Optional
 	AccountName *string `json:"accountName,omitempty" tf:"account_name,omitempty"`
 
@@ -99,8 +99,8 @@ type AccountPrivilegeParameters struct {
 	AccountPrivilege *string `json:"accountPrivilege,omitempty" tf:"account_privilege,omitempty"`
 
 	// The Id of cluster in which account belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Cluster
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Cluster
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	// +kubebuilder:validation:Optional
 	DBClusterID *string `json:"dbClusterId,omitempty" tf:"db_cluster_id,omitempty"`
 
@@ -113,7 +113,7 @@ type AccountPrivilegeParameters struct {
 	DBClusterIDSelector *v1.Selector `json:"dbClusterIdSelector,omitempty" tf:"-"`
 
 	// List of specified database name.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Database
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Database
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("db_name",false)
 	// +kubebuilder:validation:Optional
 	// +listType=set

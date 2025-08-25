@@ -16,7 +16,7 @@ import (
 type LoadBalancerZoneShiftedAttachmentInitParameters struct {
 
 	// The ID of the load balancing instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.LoadBalancer
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.LoadBalancer
 	LoadBalancerID *string `json:"loadBalancerId,omitempty" tf:"load_balancer_id,omitempty"`
 
 	// Reference to a LoadBalancer in alb to populate loadBalancerId.
@@ -28,7 +28,7 @@ type LoadBalancerZoneShiftedAttachmentInitParameters struct {
 	LoadBalancerIDSelector *v1.Selector `json:"loadBalancerIdSelector,omitempty" tf:"-"`
 
 	// The VSwitch corresponding to the zone. By default, each zone uses one VSwitch and one subnet.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -40,7 +40,7 @@ type LoadBalancerZoneShiftedAttachmentInitParameters struct {
 	VswitchIDSelector *v1.Selector `json:"vswitchIdSelector,omitempty" tf:"-"`
 
 	// The ID of the zone.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("zone_id",false)
 	ZoneID *string `json:"zoneId,omitempty" tf:"zone_id,omitempty"`
 
@@ -74,7 +74,7 @@ type LoadBalancerZoneShiftedAttachmentObservation struct {
 type LoadBalancerZoneShiftedAttachmentParameters struct {
 
 	// The ID of the load balancing instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.LoadBalancer
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.LoadBalancer
 	// +kubebuilder:validation:Optional
 	LoadBalancerID *string `json:"loadBalancerId,omitempty" tf:"load_balancer_id,omitempty"`
 
@@ -92,7 +92,7 @@ type LoadBalancerZoneShiftedAttachmentParameters struct {
 	Region *string `json:"region,omitempty" tf:"-"`
 
 	// The VSwitch corresponding to the zone. By default, each zone uses one VSwitch and one subnet.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
@@ -105,7 +105,7 @@ type LoadBalancerZoneShiftedAttachmentParameters struct {
 	VswitchIDSelector *v1.Selector `json:"vswitchIdSelector,omitempty" tf:"-"`
 
 	// The ID of the zone.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("zone_id",false)
 	// +kubebuilder:validation:Optional
 	ZoneID *string `json:"zoneId,omitempty" tf:"zone_id,omitempty"`

@@ -19,7 +19,7 @@ type BucketACLInitParameters struct {
 	ACL *string `json:"acl,omitempty" tf:"acl,omitempty"`
 
 	// The name of the bucket to which the current ACL configuration belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 
 	// Reference to a Bucket in oss to populate bucket.
@@ -50,7 +50,7 @@ type BucketACLParameters struct {
 	ACL *string `json:"acl,omitempty" tf:"acl,omitempty"`
 
 	// The name of the bucket to which the current ACL configuration belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +kubebuilder:validation:Optional
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 

@@ -16,7 +16,7 @@ import (
 type AutoSnapshotPolicyAttachmentInitParameters struct {
 
 	// The auto snapshot policy id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.AutoSnapshotPolicy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.AutoSnapshotPolicy
 	AutoSnapshotPolicyID *string `json:"autoSnapshotPolicyId,omitempty" tf:"auto_snapshot_policy_id,omitempty"`
 
 	// Reference to a AutoSnapshotPolicy in ecs to populate autoSnapshotPolicyId.
@@ -28,7 +28,7 @@ type AutoSnapshotPolicyAttachmentInitParameters struct {
 	AutoSnapshotPolicyIDSelector *v1.Selector `json:"autoSnapshotPolicyIdSelector,omitempty" tf:"-"`
 
 	// The disk id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Disk
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Disk
 	DiskID *string `json:"diskId,omitempty" tf:"disk_id,omitempty"`
 
 	// Reference to a Disk in ecs to populate diskId.
@@ -55,7 +55,7 @@ type AutoSnapshotPolicyAttachmentObservation struct {
 type AutoSnapshotPolicyAttachmentParameters struct {
 
 	// The auto snapshot policy id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.AutoSnapshotPolicy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.AutoSnapshotPolicy
 	// +kubebuilder:validation:Optional
 	AutoSnapshotPolicyID *string `json:"autoSnapshotPolicyId,omitempty" tf:"auto_snapshot_policy_id,omitempty"`
 
@@ -68,7 +68,7 @@ type AutoSnapshotPolicyAttachmentParameters struct {
 	AutoSnapshotPolicyIDSelector *v1.Selector `json:"autoSnapshotPolicyIdSelector,omitempty" tf:"-"`
 
 	// The disk id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Disk
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Disk
 	// +kubebuilder:validation:Optional
 	DiskID *string `json:"diskId,omitempty" tf:"disk_id,omitempty"`
 

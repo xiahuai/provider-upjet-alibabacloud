@@ -1,4 +1,4 @@
-module github.com/crossplane-contrib/provider-upjet-alibabacloud
+module github.com/crossplane-contrib/provider-alibabacloud
 
 go 1.24.1
 

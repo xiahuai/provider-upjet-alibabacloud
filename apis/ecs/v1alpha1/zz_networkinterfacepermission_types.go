@@ -22,7 +22,7 @@ type NetworkInterfacePermissionInitParameters struct {
 	Force *bool `json:"force,omitempty" tf:"force,omitempty"`
 
 	// The ID of the network interface.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.NetworkInterface
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.NetworkInterface
 	NetworkInterfaceID *string `json:"networkInterfaceId,omitempty" tf:"network_interface_id,omitempty"`
 
 	// Reference to a NetworkInterface in ecs to populate networkInterfaceId.
@@ -68,7 +68,7 @@ type NetworkInterfacePermissionParameters struct {
 	Force *bool `json:"force,omitempty" tf:"force,omitempty"`
 
 	// The ID of the network interface.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.NetworkInterface
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.NetworkInterface
 	// +kubebuilder:validation:Optional
 	NetworkInterfaceID *string `json:"networkInterfaceId,omitempty" tf:"network_interface_id,omitempty"`
 

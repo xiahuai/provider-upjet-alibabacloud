@@ -19,7 +19,7 @@ type KubernetesPermissionsInitParameters struct {
 	Permissions []PermissionsInitParameters `json:"permissions,omitempty" tf:"permissions,omitempty"`
 
 	// The ID of the Ram user, and it can also be the id of the Ram Role. If you use Ram Role id, you need to set is_ram_role to true during authorization.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.User
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.User
 	UID *string `json:"uid,omitempty" tf:"uid,omitempty"`
 
 	// Reference to a User in ram to populate uid.
@@ -55,7 +55,7 @@ type KubernetesPermissionsParameters struct {
 	Region *string `json:"region,omitempty" tf:"-"`
 
 	// The ID of the Ram user, and it can also be the id of the Ram Role. If you use Ram Role id, you need to set is_ram_role to true during authorization.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.User
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.User
 	// +kubebuilder:validation:Optional
 	UID *string `json:"uid,omitempty" tf:"uid,omitempty"`
 
@@ -71,7 +71,7 @@ type KubernetesPermissionsParameters struct {
 type PermissionsInitParameters struct {
 
 	// The ID of the cluster that you want to manage, When role_type value is all-clusters, the value of cluster must be "".
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
 	// +crossplane:generate:reference:refFieldName=ClusterIDRefs
 	// +crossplane:generate:reference:selectorFieldName=ClusterIDSelector
 	Cluster *string `json:"cluster,omitempty" tf:"cluster,omitempty"`
@@ -102,7 +102,7 @@ type PermissionsInitParameters struct {
 	RoleIDSelector *v1.Selector `json:"roleIdSelector,omitempty" tf:"-"`
 
 	// Specifies the predefined role that you want to assign. Valid values admin, ops, dev, restricted and the custom cluster roles.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
 	// +crossplane:generate:reference:refFieldName=RoleIDRefs
 	// +crossplane:generate:reference:selectorFieldName=RoleIDSelector
 	RoleName *string `json:"roleName,omitempty" tf:"role_name,omitempty"`
@@ -135,7 +135,7 @@ type PermissionsObservation struct {
 type PermissionsParameters struct {
 
 	// The ID of the cluster that you want to manage, When role_type value is all-clusters, the value of cluster must be "".
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
 	// +crossplane:generate:reference:refFieldName=ClusterIDRefs
 	// +crossplane:generate:reference:selectorFieldName=ClusterIDSelector
 	// +kubebuilder:validation:Optional
@@ -170,7 +170,7 @@ type PermissionsParameters struct {
 	RoleIDSelector *v1.Selector `json:"roleIdSelector,omitempty" tf:"-"`
 
 	// Specifies the predefined role that you want to assign. Valid values admin, ops, dev, restricted and the custom cluster roles.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
 	// +crossplane:generate:reference:refFieldName=RoleIDRefs
 	// +crossplane:generate:reference:selectorFieldName=RoleIDSelector
 	// +kubebuilder:validation:Optional

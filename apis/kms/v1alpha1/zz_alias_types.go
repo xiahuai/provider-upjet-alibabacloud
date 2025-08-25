@@ -19,7 +19,7 @@ type AliasInitParameters struct {
 	AliasName *string `json:"aliasName,omitempty" tf:"alias_name,omitempty"`
 
 	// The id of the key.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	KeyID *string `json:"keyId,omitempty" tf:"key_id,omitempty"`
 
 	// Reference to a Key in kms to populate keyId.
@@ -50,7 +50,7 @@ type AliasParameters struct {
 	AliasName *string `json:"aliasName,omitempty" tf:"alias_name,omitempty"`
 
 	// The id of the key.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	// +kubebuilder:validation:Optional
 	KeyID *string `json:"keyId,omitempty" tf:"key_id,omitempty"`
 

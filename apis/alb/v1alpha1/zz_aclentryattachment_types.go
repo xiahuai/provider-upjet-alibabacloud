@@ -16,7 +16,7 @@ import (
 type AclEntryAttachmentInitParameters struct {
 
 	// The ID of the Acl.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Acl
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Acl
 	ACLID *string `json:"aclId,omitempty" tf:"acl_id,omitempty"`
 
 	// Reference to a Acl in alb to populate aclId.
@@ -55,7 +55,7 @@ type AclEntryAttachmentObservation struct {
 type AclEntryAttachmentParameters struct {
 
 	// The ID of the Acl.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Acl
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Acl
 	// +kubebuilder:validation:Optional
 	ACLID *string `json:"aclId,omitempty" tf:"acl_id,omitempty"`
 

@@ -143,7 +143,7 @@ type FixedResponseConfigParameters struct {
 type ForwardGroupConfigServerGroupTuplesInitParameters struct {
 
 	// The ID of the destination server group to which requests are forwarded.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.ServerGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.ServerGroup
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	ServerGroupID *string `json:"serverGroupId,omitempty" tf:"server_group_id,omitempty"`
 
@@ -171,7 +171,7 @@ type ForwardGroupConfigServerGroupTuplesObservation struct {
 type ForwardGroupConfigServerGroupTuplesParameters struct {
 
 	// The ID of the destination server group to which requests are forwarded.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.ServerGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.ServerGroup
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	ServerGroupID *string `json:"serverGroupId,omitempty" tf:"server_group_id,omitempty"`
@@ -868,7 +868,7 @@ type RuleInitParameters struct {
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run,omitempty"`
 
 	// The ID of the listener to which the forwarding rule belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Listener
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Listener
 	ListenerID *string `json:"listenerId,omitempty" tf:"listener_id,omitempty"`
 
 	// Reference to a Listener in alb to populate listenerId.
@@ -932,7 +932,7 @@ type RuleParameters struct {
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run,omitempty"`
 
 	// The ID of the listener to which the forwarding rule belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Listener
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Listener
 	// +kubebuilder:validation:Optional
 	ListenerID *string `json:"listenerId,omitempty" tf:"listener_id,omitempty"`
 

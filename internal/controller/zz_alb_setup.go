@@ -9,18 +9,18 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	acl "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/acl"
-	aclentryattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/aclentryattachment"
-	ascript "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/ascript"
-	healthchecktemplate "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/healthchecktemplate"
-	listener "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/listener"
-	listeneraclattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/listeneraclattachment"
-	loadbalancer "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/loadbalancer"
-	loadbalancersecuritygroupattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/loadbalancersecuritygroupattachment"
-	loadbalancerzoneshiftedattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/loadbalancerzoneshiftedattachment"
-	rule "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/rule"
-	securitypolicy "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/securitypolicy"
-	servergroup "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/alb/servergroup"
+	acl "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/acl"
+	aclentryattachment "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/aclentryattachment"
+	ascript "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/ascript"
+	healthchecktemplate "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/healthchecktemplate"
+	listener "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/listener"
+	listeneraclattachment "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/listeneraclattachment"
+	loadbalancer "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/loadbalancer"
+	loadbalancersecuritygroupattachment "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/loadbalancersecuritygroupattachment"
+	loadbalancerzoneshiftedattachment "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/loadbalancerzoneshiftedattachment"
+	rule "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/rule"
+	securitypolicy "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/securitypolicy"
+	servergroup "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/alb/servergroup"
 )
 
 // Setup_alb creates all controllers with the supplied logger and adds them to

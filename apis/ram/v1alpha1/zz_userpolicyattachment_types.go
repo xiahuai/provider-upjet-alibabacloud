@@ -16,7 +16,7 @@ import (
 type UserPolicyAttachmentInitParameters struct {
 
 	// The name of the policy.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Policy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Policy
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("policy_name",false)
 	PolicyName *string `json:"policyName,omitempty" tf:"policy_name,omitempty"`
 
@@ -29,7 +29,7 @@ type UserPolicyAttachmentInitParameters struct {
 	PolicyNameSelector *v1.Selector `json:"policyNameSelector,omitempty" tf:"-"`
 
 	// Permission policy type.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Policy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Policy
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("type",true)
 	PolicyType *string `json:"policyType,omitempty" tf:"policy_type,omitempty"`
 
@@ -42,7 +42,7 @@ type UserPolicyAttachmentInitParameters struct {
 	PolicyTypeSelector *v1.Selector `json:"policyTypeSelector,omitempty" tf:"-"`
 
 	// The name of the RAM user.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.User
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.User
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
 	UserName *string `json:"userName,omitempty" tf:"user_name,omitempty"`
 
@@ -73,7 +73,7 @@ type UserPolicyAttachmentObservation struct {
 type UserPolicyAttachmentParameters struct {
 
 	// The name of the policy.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Policy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Policy
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("policy_name",false)
 	// +kubebuilder:validation:Optional
 	PolicyName *string `json:"policyName,omitempty" tf:"policy_name,omitempty"`
@@ -87,7 +87,7 @@ type UserPolicyAttachmentParameters struct {
 	PolicyNameSelector *v1.Selector `json:"policyNameSelector,omitempty" tf:"-"`
 
 	// Permission policy type.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Policy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Policy
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("type",true)
 	// +kubebuilder:validation:Optional
 	PolicyType *string `json:"policyType,omitempty" tf:"policy_type,omitempty"`
@@ -101,7 +101,7 @@ type UserPolicyAttachmentParameters struct {
 	PolicyTypeSelector *v1.Selector `json:"policyTypeSelector,omitempty" tf:"-"`
 
 	// The name of the RAM user.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.User
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.User
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
 	// +kubebuilder:validation:Optional
 	UserName *string `json:"userName,omitempty" tf:"user_name,omitempty"`

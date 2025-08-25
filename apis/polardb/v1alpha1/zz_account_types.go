@@ -28,8 +28,8 @@ type AccountInitParameters struct {
 	AccountType *string `json:"accountType,omitempty" tf:"account_type,omitempty"`
 
 	// The Id of cluster in which account belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Cluster
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Cluster
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	DBClusterID *string `json:"dbClusterId,omitempty" tf:"db_cluster_id,omitempty"`
 
 	// Reference to a Cluster in polardb to populate dbClusterId.
@@ -92,8 +92,8 @@ type AccountParameters struct {
 	AccountType *string `json:"accountType,omitempty" tf:"account_type,omitempty"`
 
 	// The Id of cluster in which account belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Cluster
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Cluster
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	// +kubebuilder:validation:Optional
 	DBClusterID *string `json:"dbClusterId,omitempty" tf:"db_cluster_id,omitempty"`
 

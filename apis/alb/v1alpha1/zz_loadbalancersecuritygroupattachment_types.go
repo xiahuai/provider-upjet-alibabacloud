@@ -19,7 +19,7 @@ type LoadBalancerSecurityGroupAttachmentInitParameters struct {
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run,omitempty"`
 
 	// The ID of the Application Load Balancer.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.LoadBalancer
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.LoadBalancer
 	LoadBalancerID *string `json:"loadBalancerId,omitempty" tf:"load_balancer_id,omitempty"`
 
 	// Reference to a LoadBalancer in alb to populate loadBalancerId.
@@ -31,7 +31,7 @@ type LoadBalancerSecurityGroupAttachmentInitParameters struct {
 	LoadBalancerIDSelector *v1.Selector `json:"loadBalancerIdSelector,omitempty" tf:"-"`
 
 	// The ID of the security group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate securityGroupId.
@@ -65,7 +65,7 @@ type LoadBalancerSecurityGroupAttachmentParameters struct {
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run,omitempty"`
 
 	// The ID of the Application Load Balancer.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.LoadBalancer
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.LoadBalancer
 	// +kubebuilder:validation:Optional
 	LoadBalancerID *string `json:"loadBalancerId,omitempty" tf:"load_balancer_id,omitempty"`
 
@@ -83,7 +83,7 @@ type LoadBalancerSecurityGroupAttachmentParameters struct {
 	Region *string `json:"region,omitempty" tf:"-"`
 
 	// The ID of the security group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 

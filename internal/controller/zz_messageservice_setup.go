@@ -9,11 +9,11 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	endpoint "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/messageservice/endpoint"
-	endpointacl "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/messageservice/endpointacl"
-	queue "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/messageservice/queue"
-	subscription "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/messageservice/subscription"
-	topic "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/messageservice/topic"
+	endpoint "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/messageservice/endpoint"
+	endpointacl "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/messageservice/endpointacl"
+	queue "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/messageservice/queue"
+	subscription "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/messageservice/subscription"
+	topic "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/messageservice/topic"
 )
 
 // Setup_messageservice creates all controllers with the supplied logger and adds them to

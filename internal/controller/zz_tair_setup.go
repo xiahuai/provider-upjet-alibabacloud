@@ -9,11 +9,11 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	account "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/tair/account"
-	auditlogconfig "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/tair/auditlogconfig"
-	connection "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/tair/connection"
-	instance "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/tair/instance"
-	tairinstance "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/tair/tairinstance"
+	account "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/tair/account"
+	auditlogconfig "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/tair/auditlogconfig"
+	connection "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/tair/connection"
+	instance "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/tair/instance"
+	tairinstance "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/tair/tairinstance"
 )
 
 // Setup_tair creates all controllers with the supplied logger and adds them to

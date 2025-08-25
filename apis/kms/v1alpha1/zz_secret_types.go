@@ -19,7 +19,7 @@ type SecretInitParameters struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// The ID of the KMS instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Instance
 	DkmsInstanceID *string `json:"dkmsInstanceId,omitempty" tf:"dkms_instance_id,omitempty"`
 
 	// Reference to a Instance in kms to populate dkmsInstanceId.
@@ -34,7 +34,7 @@ type SecretInitParameters struct {
 	EnableAutomaticRotation *bool `json:"enableAutomaticRotation,omitempty" tf:"enable_automatic_rotation,omitempty"`
 
 	// The ID of the KMS key.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	EncryptionKeyID *string `json:"encryptionKeyId,omitempty" tf:"encryption_key_id,omitempty"`
 
 	// Reference to a Key in kms to populate encryptionKeyId.
@@ -152,7 +152,7 @@ type SecretParameters struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// The ID of the KMS instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Instance
 	// +kubebuilder:validation:Optional
 	DkmsInstanceID *string `json:"dkmsInstanceId,omitempty" tf:"dkms_instance_id,omitempty"`
 
@@ -169,7 +169,7 @@ type SecretParameters struct {
 	EnableAutomaticRotation *bool `json:"enableAutomaticRotation,omitempty" tf:"enable_automatic_rotation,omitempty"`
 
 	// The ID of the KMS key.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	// +kubebuilder:validation:Optional
 	EncryptionKeyID *string `json:"encryptionKeyId,omitempty" tf:"encryption_key_id,omitempty"`
 

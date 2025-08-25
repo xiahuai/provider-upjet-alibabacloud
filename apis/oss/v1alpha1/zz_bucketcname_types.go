@@ -16,7 +16,7 @@ import (
 type BucketCnameInitParameters struct {
 
 	// The bucket to which the custom domain name belongs
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 
 	// Reference to a Bucket in oss to populate bucket.
@@ -34,7 +34,7 @@ type BucketCnameInitParameters struct {
 	DeleteCertificate *bool `json:"deleteCertificate,omitempty" tf:"delete_certificate,omitempty"`
 
 	// User-defined domain name
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.Record
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.Record
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("domain_name",false)
 	Domain *string `json:"domain,omitempty" tf:"domain,omitempty"`
 
@@ -83,7 +83,7 @@ type BucketCnameObservation struct {
 type BucketCnameParameters struct {
 
 	// The bucket to which the custom domain name belongs
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +kubebuilder:validation:Optional
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 
@@ -104,7 +104,7 @@ type BucketCnameParameters struct {
 	DeleteCertificate *bool `json:"deleteCertificate,omitempty" tf:"delete_certificate,omitempty"`
 
 	// User-defined domain name
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.Record
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.Record
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("domain_name",false)
 	// +kubebuilder:validation:Optional
 	Domain *string `json:"domain,omitempty" tf:"domain,omitempty"`

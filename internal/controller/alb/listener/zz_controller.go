@@ -22,8 +22,8 @@ import (
 	"github.com/pkg/errors"
 	ctrl "sigs.k8s.io/controller-runtime"
 
-	v1alpha1 "github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1"
-	features "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/features"
+	v1alpha1 "github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1"
+	features "github.com/crossplane-contrib/provider-alibabacloud/internal/features"
 )
 
 // Setup adds a controller that reconciles Listener managed resources.

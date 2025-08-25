@@ -12,7 +12,7 @@ import (
 
 const (
 	// SelfPackagePath is the golang path for this package.
-	SelfPackagePath = "github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common"
+	SelfPackagePath = "github.com/crossplane-contrib/provider-alibabacloud/config/common"
 
 	// PathIdExtractor is the golang path to
 	// IdExtractor function in this package.

@@ -16,7 +16,7 @@ import (
 type InvocationInitParameters struct {
 
 	// The ID of the command.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Command
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Command
 	CommandID *string `json:"commandId,omitempty" tf:"command_id,omitempty"`
 
 	// Reference to a Command in ecs to populate commandId.
@@ -31,7 +31,7 @@ type InvocationInitParameters struct {
 	Frequency *string `json:"frequency,omitempty" tf:"frequency,omitempty"`
 
 	// The list of instances to execute the command. You can specify up to 50 instance IDs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	InstanceID []*string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
@@ -96,7 +96,7 @@ type InvocationObservation struct {
 type InvocationParameters struct {
 
 	// The ID of the command.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Command
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Command
 	// +kubebuilder:validation:Optional
 	CommandID *string `json:"commandId,omitempty" tf:"command_id,omitempty"`
 
@@ -113,7 +113,7 @@ type InvocationParameters struct {
 	Frequency *string `json:"frequency,omitempty" tf:"frequency,omitempty"`
 
 	// The list of instances to execute the command. You can specify up to 50 instance IDs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	InstanceID []*string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`

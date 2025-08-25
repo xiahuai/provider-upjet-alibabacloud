@@ -17,7 +17,7 @@ type MembershipAttachmentInitParameters struct {
 
 	// The ID of the cluster to which the membership is being attached.
 	// ID of the ACK One fleet cluster
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ackone/v1alpha1.Cluster
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ackone/v1alpha1.Cluster
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	ClusterID *string `json:"clusterId,omitempty" tf:"cluster_id,omitempty"`
 
@@ -31,7 +31,7 @@ type MembershipAttachmentInitParameters struct {
 
 	// The ID of the member being attached to the cluster.
 	// ID of the ACK cluster that needs to be managed by ACK One fleet
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	SubClusterID *string `json:"subClusterId,omitempty" tf:"sub_cluster_id,omitempty"`
 
@@ -62,7 +62,7 @@ type MembershipAttachmentParameters struct {
 
 	// The ID of the cluster to which the membership is being attached.
 	// ID of the ACK One fleet cluster
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ackone/v1alpha1.Cluster
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ackone/v1alpha1.Cluster
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	ClusterID *string `json:"clusterId,omitempty" tf:"cluster_id,omitempty"`
@@ -82,7 +82,7 @@ type MembershipAttachmentParameters struct {
 
 	// The ID of the member being attached to the cluster.
 	// ID of the ACK cluster that needs to be managed by ACK One fleet
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	SubClusterID *string `json:"subClusterId,omitempty" tf:"sub_cluster_id,omitempty"`

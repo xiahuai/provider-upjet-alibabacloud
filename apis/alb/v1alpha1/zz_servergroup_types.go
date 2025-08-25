@@ -231,7 +231,7 @@ type ServerGroupInitParameters struct {
 	UpstreamKeepaliveEnabled *bool `json:"upstreamKeepaliveEnabled,omitempty" tf:"upstream_keepalive_enabled,omitempty"`
 
 	// The ID of the virtual private cloud (VPC). You can add only servers that are deployed in the specified VPC to the server group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -398,7 +398,7 @@ type ServerGroupParameters struct {
 	UpstreamKeepaliveEnabled *bool `json:"upstreamKeepaliveEnabled,omitempty" tf:"upstream_keepalive_enabled,omitempty"`
 
 	// The ID of the virtual private cloud (VPC). You can add only servers that are deployed in the specified VPC to the server group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
@@ -423,7 +423,7 @@ type ServersInitParameters struct {
 	RemoteIPEnabled *bool `json:"remoteIpEnabled,omitempty" tf:"remote_ip_enabled,omitempty"`
 
 	// The ID of the backend server. You can specify at most 200 servers in each call.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	ServerID *string `json:"serverId,omitempty" tf:"server_id,omitempty"`
 
@@ -436,7 +436,7 @@ type ServersInitParameters struct {
 	ServerIDSelector *v1.Selector `json:"serverIdSelector,omitempty" tf:"-"`
 
 	// The IP address of the backend server. You can specify at most 200 servers in each call.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("private_ip",false)
 	ServerIP *string `json:"serverIp,omitempty" tf:"server_ip,omitempty"`
 
@@ -500,7 +500,7 @@ type ServersParameters struct {
 	RemoteIPEnabled *bool `json:"remoteIpEnabled,omitempty" tf:"remote_ip_enabled,omitempty"`
 
 	// The ID of the backend server. You can specify at most 200 servers in each call.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	ServerID *string `json:"serverId,omitempty" tf:"server_id,omitempty"`
@@ -514,7 +514,7 @@ type ServersParameters struct {
 	ServerIDSelector *v1.Selector `json:"serverIdSelector,omitempty" tf:"-"`
 
 	// The IP address of the backend server. You can specify at most 200 servers in each call.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("private_ip",false)
 	// +kubebuilder:validation:Optional
 	ServerIP *string `json:"serverIp,omitempty" tf:"server_ip,omitempty"`

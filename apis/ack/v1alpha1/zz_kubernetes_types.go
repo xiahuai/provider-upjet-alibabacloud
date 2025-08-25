@@ -201,7 +201,7 @@ type KubernetesInitParameters struct {
 	MasterPeriodUnit *string `json:"masterPeriodUnit,omitempty" tf:"master_period_unit,omitempty"`
 
 	// The vswitches used by master, you can specific 3 or 5 vswitches because of the amount of masters. Detailed below.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	MasterVswitchIds []*string `json:"masterVswitchIds,omitempty" tf:"master_vswitch_ids,omitempty"`
 
 	// References to Vswitch in vpc to populate masterVswitchIds.
@@ -243,7 +243,7 @@ type KubernetesInitParameters struct {
 	PodCidr *string `json:"podCidr,omitempty" tf:"pod_cidr,omitempty"`
 
 	// - [Terway Specific] The vswitches for the pod network when using Terway. It is recommended that pod_vswitch_ids is not belong to worker_vswitch_ids and master_vswitch_ids but must be in same availability zones. Only works for Create Operation.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	PodVswitchIds []*string `json:"podVswitchIds,omitempty" tf:"pod_vswitch_ids,omitempty"`
 
 	// References to Vswitch in vpc to populate podVswitchIds.
@@ -271,7 +271,7 @@ type KubernetesInitParameters struct {
 	Runtime map[string]*string `json:"runtime,omitempty" tf:"runtime,omitempty"`
 
 	// The ID of the security group to which the ECS instances in the cluster belong. If it is not specified, a new Security group will be built.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate securityGroupId.
@@ -314,7 +314,7 @@ type KubernetesInitParameters struct {
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
 
 	// (Removed) The vswitch where new kubernetes cluster will be located. If it is not specified, a new VPC and VSwicth will be built. It must be in the zone which availability_zone specified.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -334,7 +334,7 @@ type KubernetesInitParameters struct {
 	VswitchIDsSelector *v1.Selector `json:"vswitchIDsSelector,omitempty" tf:"-"`
 
 	// (Removed) The vswitch where new kubernetes cluster will be located. Specify one or more vswitch's id. It must be in the zone which availability_zone specified.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:refFieldName=VswitchIDsRefs
 	// +crossplane:generate:reference:selectorFieldName=VswitchIDsSelector
 	VswitchIds []*string `json:"vswitchIds,omitempty" tf:"vswitch_ids,omitempty"`
@@ -853,7 +853,7 @@ type KubernetesParameters struct {
 	MasterPeriodUnit *string `json:"masterPeriodUnit,omitempty" tf:"master_period_unit,omitempty"`
 
 	// The vswitches used by master, you can specific 3 or 5 vswitches because of the amount of masters. Detailed below.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	MasterVswitchIds []*string `json:"masterVswitchIds,omitempty" tf:"master_vswitch_ids,omitempty"`
 
@@ -906,7 +906,7 @@ type KubernetesParameters struct {
 	PodCidr *string `json:"podCidr,omitempty" tf:"pod_cidr,omitempty"`
 
 	// - [Terway Specific] The vswitches for the pod network when using Terway. It is recommended that pod_vswitch_ids is not belong to worker_vswitch_ids and master_vswitch_ids but must be in same availability zones. Only works for Create Operation.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	PodVswitchIds []*string `json:"podVswitchIds,omitempty" tf:"pod_vswitch_ids,omitempty"`
 
@@ -945,7 +945,7 @@ type KubernetesParameters struct {
 	Runtime map[string]*string `json:"runtime,omitempty" tf:"runtime,omitempty"`
 
 	// The ID of the security group to which the ECS instances in the cluster belong. If it is not specified, a new Security group will be built.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
@@ -999,7 +999,7 @@ type KubernetesParameters struct {
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
 
 	// (Removed) The vswitch where new kubernetes cluster will be located. If it is not specified, a new VPC and VSwicth will be built. It must be in the zone which availability_zone specified.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
@@ -1020,7 +1020,7 @@ type KubernetesParameters struct {
 	VswitchIDsSelector *v1.Selector `json:"vswitchIDsSelector,omitempty" tf:"-"`
 
 	// (Removed) The vswitch where new kubernetes cluster will be located. Specify one or more vswitch's id. It must be in the zone which availability_zone specified.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:refFieldName=VswitchIDsRefs
 	// +crossplane:generate:reference:selectorFieldName=VswitchIDsSelector
 	// +kubebuilder:validation:Optional

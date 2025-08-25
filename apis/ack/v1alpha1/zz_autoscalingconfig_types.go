@@ -16,7 +16,7 @@ import (
 type AutoscalingConfigInitParameters struct {
 
 	// The id of kubernetes cluster.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
 	// +crossplane:generate:reference:refFieldName=ClusterIDRefs
 	// +crossplane:generate:reference:selectorFieldName=ClusterIDSelector
 	ClusterID *string `json:"clusterId,omitempty" tf:"cluster_id,omitempty"`
@@ -132,7 +132,7 @@ type AutoscalingConfigObservation struct {
 type AutoscalingConfigParameters struct {
 
 	// The id of kubernetes cluster.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
 	// +crossplane:generate:reference:refFieldName=ClusterIDRefs
 	// +crossplane:generate:reference:selectorFieldName=ClusterIDSelector
 	// +kubebuilder:validation:Optional

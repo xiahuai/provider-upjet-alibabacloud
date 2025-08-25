@@ -610,7 +610,7 @@ type KubernetesNodePoolInitParameters struct {
 	CisEnabled *bool `json:"cisEnabled,omitempty" tf:"cis_enabled,omitempty"`
 
 	// The id of kubernetes cluster.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
 	// +crossplane:generate:reference:refFieldName=ClusterIDRefs
 	// +crossplane:generate:reference:selectorFieldName=ClusterIDSelector
 	ClusterID *string `json:"clusterId,omitempty" tf:"cluster_id,omitempty"`
@@ -679,7 +679,7 @@ type KubernetesNodePoolInitParameters struct {
 	KeepInstanceName *bool `json:"keepInstanceName,omitempty" tf:"keep_instance_name,omitempty"`
 
 	// The name of the key pair. When the node pool is a managed node pool, only key_name is supported.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.KeyPair
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.KeyPair
 	KeyName *string `json:"keyName,omitempty" tf:"key_name,omitempty"`
 
 	// Reference to a KeyPair in ecs to populate keyName.
@@ -777,7 +777,7 @@ type KubernetesNodePoolInitParameters struct {
 	SecurityGroupIDSelector *v1.Selector `json:"securityGroupIdSelector,omitempty" tf:"-"`
 
 	// Multiple security groups can be configured for a node pool. If both security_group_ids and security_group_id are configured, security_group_ids takes effect. This field cannot be modified.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupIDRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupIDSelector
 	// +listType=set
@@ -858,7 +858,7 @@ type KubernetesNodePoolInitParameters struct {
 	UserData *string `json:"userData,omitempty" tf:"user_data,omitempty"`
 
 	// The vswitches used by node pool workers.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchIds []*string `json:"vswitchIds,omitempty" tf:"vswitch_ids,omitempty"`
 
 	// References to Vswitch in vpc to populate vswitchIds.
@@ -1130,7 +1130,7 @@ type KubernetesNodePoolParameters struct {
 	CisEnabled *bool `json:"cisEnabled,omitempty" tf:"cis_enabled,omitempty"`
 
 	// The id of kubernetes cluster.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ack/v1alpha1.ManagedKubernetes
 	// +crossplane:generate:reference:refFieldName=ClusterIDRefs
 	// +crossplane:generate:reference:selectorFieldName=ClusterIDSelector
 	// +kubebuilder:validation:Optional
@@ -1218,7 +1218,7 @@ type KubernetesNodePoolParameters struct {
 	KeepInstanceName *bool `json:"keepInstanceName,omitempty" tf:"keep_instance_name,omitempty"`
 
 	// The name of the key pair. When the node pool is a managed node pool, only key_name is supported.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.KeyPair
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.KeyPair
 	// +kubebuilder:validation:Optional
 	KeyName *string `json:"keyName,omitempty" tf:"key_name,omitempty"`
 
@@ -1348,7 +1348,7 @@ type KubernetesNodePoolParameters struct {
 	SecurityGroupIDSelector *v1.Selector `json:"securityGroupIdSelector,omitempty" tf:"-"`
 
 	// Multiple security groups can be configured for a node pool. If both security_group_ids and security_group_id are configured, security_group_ids takes effect. This field cannot be modified.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupIDRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupIDSelector
 	// +kubebuilder:validation:Optional
@@ -1453,7 +1453,7 @@ type KubernetesNodePoolParameters struct {
 	UserData *string `json:"userData,omitempty" tf:"user_data,omitempty"`
 
 	// The vswitches used by node pool workers.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchIds []*string `json:"vswitchIds,omitempty" tf:"vswitch_ids,omitempty"`
 

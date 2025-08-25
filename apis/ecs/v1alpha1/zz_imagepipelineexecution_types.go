@@ -16,7 +16,7 @@ import (
 type ImagePipelineExecutionInitParameters struct {
 
 	// The ID of the image template.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.ImagePipeline
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.ImagePipeline
 	ImagePipelineID *string `json:"imagePipelineId,omitempty" tf:"image_pipeline_id,omitempty"`
 
 	// Reference to a ImagePipeline in ecs to populate imagePipelineId.
@@ -49,7 +49,7 @@ type ImagePipelineExecutionObservation struct {
 type ImagePipelineExecutionParameters struct {
 
 	// The ID of the image template.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.ImagePipeline
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.ImagePipeline
 	// +kubebuilder:validation:Optional
 	ImagePipelineID *string `json:"imagePipelineId,omitempty" tf:"image_pipeline_id,omitempty"`
 

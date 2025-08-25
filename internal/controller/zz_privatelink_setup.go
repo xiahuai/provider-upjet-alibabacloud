@@ -9,12 +9,12 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	vpcendpoint "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/privatelink/vpcendpoint"
-	vpcendpointconnection "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/privatelink/vpcendpointconnection"
-	vpcendpointservice "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/privatelink/vpcendpointservice"
-	vpcendpointserviceresource "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/privatelink/vpcendpointserviceresource"
-	vpcendpointserviceuser "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/privatelink/vpcendpointserviceuser"
-	vpcendpointzone "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/privatelink/vpcendpointzone"
+	vpcendpoint "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/privatelink/vpcendpoint"
+	vpcendpointconnection "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/privatelink/vpcendpointconnection"
+	vpcendpointservice "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/privatelink/vpcendpointservice"
+	vpcendpointserviceresource "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/privatelink/vpcendpointserviceresource"
+	vpcendpointserviceuser "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/privatelink/vpcendpointserviceuser"
+	vpcendpointzone "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/privatelink/vpcendpointzone"
 )
 
 // Setup_privatelink creates all controllers with the supplied logger and adds them to

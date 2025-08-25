@@ -19,7 +19,7 @@ type DomainInitParameters struct {
 	DomainName *string `json:"domainName,omitempty" tf:"domain_name,omitempty"`
 
 	// Id of the group in which the domain will add. If not supplied, then use default group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.DomainGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.DomainGroup
 	GroupID *string `json:"groupId,omitempty" tf:"group_id,omitempty"`
 
 	// Reference to a DomainGroup in alidns to populate groupId.
@@ -89,7 +89,7 @@ type DomainParameters struct {
 	DomainName *string `json:"domainName,omitempty" tf:"domain_name,omitempty"`
 
 	// Id of the group in which the domain will add. If not supplied, then use default group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.DomainGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.DomainGroup
 	// +kubebuilder:validation:Optional
 	GroupID *string `json:"groupId,omitempty" tf:"group_id,omitempty"`
 

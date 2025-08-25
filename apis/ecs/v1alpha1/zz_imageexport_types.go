@@ -16,7 +16,7 @@ import (
 type ImageExportInitParameters struct {
 
 	// The source image ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Image
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Image
 	ImageID *string `json:"imageId,omitempty" tf:"image_id,omitempty"`
 
 	// Reference to a Image in ecs to populate imageId.
@@ -28,7 +28,7 @@ type ImageExportInitParameters struct {
 	ImageIDSelector *v1.Selector `json:"imageIdSelector,omitempty" tf:"-"`
 
 	// Save the exported OSS bucket.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	OssBucket *string `json:"ossBucket,omitempty" tf:"oss_bucket,omitempty"`
 
 	// Reference to a Bucket in oss to populate ossBucket.
@@ -61,7 +61,7 @@ type ImageExportObservation struct {
 type ImageExportParameters struct {
 
 	// The source image ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Image
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Image
 	// +kubebuilder:validation:Optional
 	ImageID *string `json:"imageId,omitempty" tf:"image_id,omitempty"`
 
@@ -74,7 +74,7 @@ type ImageExportParameters struct {
 	ImageIDSelector *v1.Selector `json:"imageIdSelector,omitempty" tf:"-"`
 
 	// Save the exported OSS bucket.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +kubebuilder:validation:Optional
 	OssBucket *string `json:"ossBucket,omitempty" tf:"oss_bucket,omitempty"`
 

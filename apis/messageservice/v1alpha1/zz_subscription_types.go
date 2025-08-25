@@ -66,8 +66,8 @@ type SubscriptionInitParameters struct {
 	SubscriptionName *string `json:"subscriptionName,omitempty" tf:"subscription_name,omitempty"`
 
 	// The topic which The subscription belongs to was named with the name. A topic name must start with an English letter or a digit, and can contain English letters, digits, and hyphens, with the length not exceeding 255 characters.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/messageservice/v1alpha1.Topic
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/messageservice/v1alpha1.Topic
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	TopicName *string `json:"topicName,omitempty" tf:"topic_name,omitempty"`
 
 	// Reference to a Topic in messageservice to populate topicName.
@@ -148,8 +148,8 @@ type SubscriptionParameters struct {
 	SubscriptionName *string `json:"subscriptionName,omitempty" tf:"subscription_name,omitempty"`
 
 	// The topic which The subscription belongs to was named with the name. A topic name must start with an English letter or a digit, and can contain English letters, digits, and hyphens, with the length not exceeding 255 characters.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/messageservice/v1alpha1.Topic
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/messageservice/v1alpha1.Topic
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	// +kubebuilder:validation:Optional
 	TopicName *string `json:"topicName,omitempty" tf:"topic_name,omitempty"`
 

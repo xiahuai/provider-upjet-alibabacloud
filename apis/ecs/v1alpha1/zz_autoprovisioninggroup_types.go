@@ -34,7 +34,7 @@ type AutoProvisioningGroupInitParameters struct {
 	LaunchTemplateConfig []LaunchTemplateConfigInitParameters `json:"launchTemplateConfig,omitempty" tf:"launch_template_config,omitempty"`
 
 	// The ID of the instance launch template associated with the auto provisioning group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.LaunchTemplate
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.LaunchTemplate
 	LaunchTemplateID *string `json:"launchTemplateId,omitempty" tf:"launch_template_id,omitempty"`
 
 	// Reference to a LaunchTemplate in ecs to populate launchTemplateId.
@@ -178,7 +178,7 @@ type AutoProvisioningGroupParameters struct {
 	LaunchTemplateConfig []LaunchTemplateConfigParameters `json:"launchTemplateConfig,omitempty" tf:"launch_template_config,omitempty"`
 
 	// The ID of the instance launch template associated with the auto provisioning group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.LaunchTemplate
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.LaunchTemplate
 	// +kubebuilder:validation:Optional
 	LaunchTemplateID *string `json:"launchTemplateId,omitempty" tf:"launch_template_id,omitempty"`
 
@@ -260,7 +260,7 @@ type LaunchTemplateConfigInitParameters struct {
 	Priority *string `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// The ID of the VSwitch in the Nth extended configurations of the launch template.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
@@ -309,7 +309,7 @@ type LaunchTemplateConfigParameters struct {
 	Priority *string `json:"priority,omitempty" tf:"priority,omitempty"`
 
 	// The ID of the VSwitch in the Nth extended configurations of the launch template.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`

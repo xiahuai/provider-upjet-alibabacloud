@@ -180,7 +180,7 @@ type ListenerInitParameters struct {
 	ListenerProtocol *string `json:"listenerProtocol,omitempty" tf:"listener_protocol,omitempty"`
 
 	// The SLB Instance Id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.LoadBalancer
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.LoadBalancer
 	LoadBalancerID *string `json:"loadBalancerId,omitempty" tf:"load_balancer_id,omitempty"`
 
 	// Reference to a LoadBalancer in alb to populate loadBalancerId.
@@ -198,7 +198,7 @@ type ListenerInitParameters struct {
 	RequestTimeout *float64 `json:"requestTimeout,omitempty" tf:"request_timeout,omitempty"`
 
 	// Security Policy
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.SecurityPolicy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.SecurityPolicy
 	SecurityPolicyID *string `json:"securityPolicyId,omitempty" tf:"security_policy_id,omitempty"`
 
 	// Reference to a SecurityPolicy in alb to populate securityPolicyId.
@@ -342,7 +342,7 @@ type ListenerParameters struct {
 	ListenerProtocol *string `json:"listenerProtocol,omitempty" tf:"listener_protocol,omitempty"`
 
 	// The SLB Instance Id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.LoadBalancer
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.LoadBalancer
 	// +kubebuilder:validation:Optional
 	LoadBalancerID *string `json:"loadBalancerId,omitempty" tf:"load_balancer_id,omitempty"`
 
@@ -368,7 +368,7 @@ type ListenerParameters struct {
 	RequestTimeout *float64 `json:"requestTimeout,omitempty" tf:"request_timeout,omitempty"`
 
 	// Security Policy
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.SecurityPolicy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.SecurityPolicy
 	// +kubebuilder:validation:Optional
 	SecurityPolicyID *string `json:"securityPolicyId,omitempty" tf:"security_policy_id,omitempty"`
 
@@ -426,7 +426,7 @@ type QuicConfigParameters struct {
 type ServerGroupTuplesInitParameters struct {
 
 	// Forwarded to the Destination Server Group ID
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.ServerGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.ServerGroup
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	ServerGroupID *string `json:"serverGroupId,omitempty" tf:"server_group_id,omitempty"`
 
@@ -448,7 +448,7 @@ type ServerGroupTuplesObservation struct {
 type ServerGroupTuplesParameters struct {
 
 	// Forwarded to the Destination Server Group ID
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.ServerGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.ServerGroup
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	ServerGroupID *string `json:"serverGroupId,omitempty" tf:"server_group_id,omitempty"`

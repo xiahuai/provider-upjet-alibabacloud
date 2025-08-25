@@ -22,7 +22,7 @@ type AsyncInvokeConfigInitParameters struct {
 	DestinationConfig []DestinationConfigInitParameters `json:"destinationConfig,omitempty" tf:"destination_config,omitempty"`
 
 	// Function Name
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
 	FunctionName *string `json:"functionName,omitempty" tf:"function_name,omitempty"`
 
 	// Reference to a Function in fcv3 to populate functionName.
@@ -87,7 +87,7 @@ type AsyncInvokeConfigParameters struct {
 	DestinationConfig []DestinationConfigParameters `json:"destinationConfig,omitempty" tf:"destination_config,omitempty"`
 
 	// Function Name
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
 	// +kubebuilder:validation:Optional
 	FunctionName *string `json:"functionName,omitempty" tf:"function_name,omitempty"`
 
@@ -149,8 +149,8 @@ type DestinationConfigParameters struct {
 type OnFailureInitParameters struct {
 
 	// Asynchronous call target Resource Descriptor
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.Fcv3FunctionArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.Fcv3FunctionArnExtractor()
 	Destination *string `json:"destination,omitempty" tf:"destination,omitempty"`
 
 	// Reference to a Function in fcv3 to populate destination.
@@ -171,8 +171,8 @@ type OnFailureObservation struct {
 type OnFailureParameters struct {
 
 	// Asynchronous call target Resource Descriptor
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.Fcv3FunctionArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.Fcv3FunctionArnExtractor()
 	// +kubebuilder:validation:Optional
 	Destination *string `json:"destination,omitempty" tf:"destination,omitempty"`
 
@@ -188,8 +188,8 @@ type OnFailureParameters struct {
 type OnSuccessInitParameters struct {
 
 	// Asynchronous call target Resource Descriptor
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.Fcv3FunctionArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.Fcv3FunctionArnExtractor()
 	Destination *string `json:"destination,omitempty" tf:"destination,omitempty"`
 
 	// Reference to a Function in fcv3 to populate destination.
@@ -210,8 +210,8 @@ type OnSuccessObservation struct {
 type OnSuccessParameters struct {
 
 	// Asynchronous call target Resource Descriptor
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.Fcv3FunctionArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.Fcv3FunctionArnExtractor()
 	// +kubebuilder:validation:Optional
 	Destination *string `json:"destination,omitempty" tf:"destination,omitempty"`
 

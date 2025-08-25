@@ -19,7 +19,7 @@ type LayerVersionCodeInitParameters struct {
 	Checksum *string `json:"checksum,omitempty" tf:"checksum,omitempty"`
 
 	// Name of the OSS Bucket where the user stores the Layer Code ZIP package
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	OssBucketName *string `json:"ossBucketName,omitempty" tf:"oss_bucket_name,omitempty"`
 
 	// Reference to a Bucket in oss to populate ossBucketName.
@@ -31,7 +31,7 @@ type LayerVersionCodeInitParameters struct {
 	OssBucketNameSelector *v1.Selector `json:"ossBucketNameSelector,omitempty" tf:"-"`
 
 	// Name of the OSS Object where the user stores the Layer Code ZIP package
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.BucketObject
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.BucketObject
 	OssObjectName *string `json:"ossObjectName,omitempty" tf:"oss_object_name,omitempty"`
 
 	// Reference to a BucketObject in oss to populate ossObjectName.
@@ -68,7 +68,7 @@ type LayerVersionCodeParameters struct {
 	Checksum *string `json:"checksum,omitempty" tf:"checksum,omitempty"`
 
 	// Name of the OSS Bucket where the user stores the Layer Code ZIP package
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +kubebuilder:validation:Optional
 	OssBucketName *string `json:"ossBucketName,omitempty" tf:"oss_bucket_name,omitempty"`
 
@@ -81,7 +81,7 @@ type LayerVersionCodeParameters struct {
 	OssBucketNameSelector *v1.Selector `json:"ossBucketNameSelector,omitempty" tf:"-"`
 
 	// Name of the OSS Object where the user stores the Layer Code ZIP package
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.BucketObject
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.BucketObject
 	// +kubebuilder:validation:Optional
 	OssObjectName *string `json:"ossObjectName,omitempty" tf:"oss_object_name,omitempty"`
 

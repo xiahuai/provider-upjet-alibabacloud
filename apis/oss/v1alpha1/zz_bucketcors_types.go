@@ -87,7 +87,7 @@ type BucketCorsCorsRuleParameters struct {
 type BucketCorsInitParameters struct {
 
 	// The name of the Bucket.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 
 	// Reference to a Bucket in oss to populate bucket.
@@ -123,7 +123,7 @@ type BucketCorsObservation struct {
 type BucketCorsParameters struct {
 
 	// The name of the Bucket.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +kubebuilder:validation:Optional
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 

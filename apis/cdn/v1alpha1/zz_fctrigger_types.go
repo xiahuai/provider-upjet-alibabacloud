@@ -28,8 +28,8 @@ type FcTriggerInitParameters struct {
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
 
 	// The role authorized by RAM. The value formats as acs:ram::{AccountID}:role/{RoleName}.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.RoleArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.RoleArnExtractor()
 	RoleArn *string `json:"roleArn,omitempty" tf:"role_arn,omitempty"`
 
 	// Reference to a Role in ram to populate roleArn.
@@ -98,8 +98,8 @@ type FcTriggerParameters struct {
 	Region *string `json:"region,omitempty" tf:"-"`
 
 	// The role authorized by RAM. The value formats as acs:ram::{AccountID}:role/{RoleName}.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.RoleArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.RoleArnExtractor()
 	// +kubebuilder:validation:Optional
 	RoleArn *string `json:"roleArn,omitempty" tf:"role_arn,omitempty"`
 

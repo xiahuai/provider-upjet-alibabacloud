@@ -8,11 +8,11 @@ package v1alpha1
 
 import (
 	"context"
-	v1alpha12 "github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1"
-	v1alpha11 "github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1"
-	v1alpha13 "github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1"
-	v1alpha1 "github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1"
-	common "github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common"
+	v1alpha12 "github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1"
+	v1alpha11 "github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1"
+	v1alpha13 "github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1"
+	v1alpha1 "github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1"
+	common "github.com/crossplane-contrib/provider-alibabacloud/config/common"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
 	resource "github.com/crossplane/upjet/pkg/resource"
 	errors "github.com/pkg/errors"

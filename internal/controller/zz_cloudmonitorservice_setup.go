@@ -9,7 +9,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	alarmcontactgroup "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/cloudmonitorservice/alarmcontactgroup"
+	alarmcontactgroup "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/cloudmonitorservice/alarmcontactgroup"
 )
 
 // Setup_cloudmonitorservice creates all controllers with the supplied logger and adds them to

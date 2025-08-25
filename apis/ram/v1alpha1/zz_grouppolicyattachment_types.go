@@ -16,7 +16,7 @@ import (
 type GroupPolicyAttachmentInitParameters struct {
 
 	// The name of the group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Group
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Group
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
 	GroupName *string `json:"groupName,omitempty" tf:"group_name,omitempty"`
 
@@ -29,7 +29,7 @@ type GroupPolicyAttachmentInitParameters struct {
 	GroupNameSelector *v1.Selector `json:"groupNameSelector,omitempty" tf:"-"`
 
 	// The name of the policy.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Policy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Policy
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("policy_name",false)
 	PolicyName *string `json:"policyName,omitempty" tf:"policy_name,omitempty"`
 
@@ -42,7 +42,7 @@ type GroupPolicyAttachmentInitParameters struct {
 	PolicyNameSelector *v1.Selector `json:"policyNameSelector,omitempty" tf:"-"`
 
 	// Policy type.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Policy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Policy
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("type",true)
 	PolicyType *string `json:"policyType,omitempty" tf:"policy_type,omitempty"`
 
@@ -73,7 +73,7 @@ type GroupPolicyAttachmentObservation struct {
 type GroupPolicyAttachmentParameters struct {
 
 	// The name of the group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Group
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Group
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
 	// +kubebuilder:validation:Optional
 	GroupName *string `json:"groupName,omitempty" tf:"group_name,omitempty"`
@@ -87,7 +87,7 @@ type GroupPolicyAttachmentParameters struct {
 	GroupNameSelector *v1.Selector `json:"groupNameSelector,omitempty" tf:"-"`
 
 	// The name of the policy.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Policy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Policy
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("policy_name",false)
 	// +kubebuilder:validation:Optional
 	PolicyName *string `json:"policyName,omitempty" tf:"policy_name,omitempty"`
@@ -101,7 +101,7 @@ type GroupPolicyAttachmentParameters struct {
 	PolicyNameSelector *v1.Selector `json:"policyNameSelector,omitempty" tf:"-"`
 
 	// Policy type.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Policy
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Policy
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("type",true)
 	// +kubebuilder:validation:Optional
 	PolicyType *string `json:"policyType,omitempty" tf:"policy_type,omitempty"`

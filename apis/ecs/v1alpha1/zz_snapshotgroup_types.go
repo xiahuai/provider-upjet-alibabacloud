@@ -25,7 +25,7 @@ type SnapshotGroupInitParameters struct {
 	ExcludeDiskID []*string `json:"excludeDiskId,omitempty" tf:"exclude_disk_id,omitempty"`
 
 	// The ID of the instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
 	// Reference to a Instance in ecs to populate instanceId.
@@ -104,7 +104,7 @@ type SnapshotGroupParameters struct {
 	ExcludeDiskID []*string `json:"excludeDiskId,omitempty" tf:"exclude_disk_id,omitempty"`
 
 	// The ID of the instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +kubebuilder:validation:Optional
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 

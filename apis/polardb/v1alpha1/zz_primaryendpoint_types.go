@@ -19,8 +19,8 @@ type PrimaryEndpointInitParameters struct {
 	ConnectionPrefix *string `json:"connectionPrefix,omitempty" tf:"connection_prefix,omitempty"`
 
 	// The Id of cluster that can run database.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Cluster
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Cluster
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	DBClusterID *string `json:"dbClusterId,omitempty" tf:"db_cluster_id,omitempty"`
 
 	// Reference to a Cluster in polardb to populate dbClusterId.
@@ -100,8 +100,8 @@ type PrimaryEndpointParameters struct {
 	ConnectionPrefix *string `json:"connectionPrefix,omitempty" tf:"connection_prefix,omitempty"`
 
 	// The Id of cluster that can run database.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/polardb/v1alpha1.Cluster
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/polardb/v1alpha1.Cluster
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	// +kubebuilder:validation:Optional
 	DBClusterID *string `json:"dbClusterId,omitempty" tf:"db_cluster_id,omitempty"`
 

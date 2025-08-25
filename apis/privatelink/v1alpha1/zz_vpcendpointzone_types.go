@@ -19,7 +19,7 @@ type VpcEndpointZoneInitParameters struct {
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run,omitempty"`
 
 	// The endpoint ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/privatelink/v1alpha1.VpcEndpoint
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/privatelink/v1alpha1.VpcEndpoint
 	EndpointID *string `json:"endpointId,omitempty" tf:"endpoint_id,omitempty"`
 
 	// Reference to a VpcEndpoint in privatelink to populate endpointId.
@@ -34,7 +34,7 @@ type VpcEndpointZoneInitParameters struct {
 	EniIP *string `json:"eniIp,omitempty" tf:"eni_ip,omitempty"`
 
 	// The ID of the vSwitch in the zone.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -83,7 +83,7 @@ type VpcEndpointZoneParameters struct {
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run,omitempty"`
 
 	// The endpoint ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/privatelink/v1alpha1.VpcEndpoint
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/privatelink/v1alpha1.VpcEndpoint
 	// +kubebuilder:validation:Optional
 	EndpointID *string `json:"endpointId,omitempty" tf:"endpoint_id,omitempty"`
 
@@ -105,7 +105,7 @@ type VpcEndpointZoneParameters struct {
 	Region *string `json:"region,omitempty" tf:"-"`
 
 	// The ID of the vSwitch in the zone.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 

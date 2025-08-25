@@ -19,7 +19,7 @@ type KeyPairAttachmentInitParameters struct {
 	Force *bool `json:"force,omitempty" tf:"force,omitempty"`
 
 	// The list of ECS instance's IDs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +crossplane:generate:reference:refFieldName=InstanceRefs
 	// +crossplane:generate:reference:selectorFieldName=InstanceSelector
 	// +listType=set
@@ -34,7 +34,7 @@ type KeyPairAttachmentInitParameters struct {
 	InstanceSelector *v1.Selector `json:"instanceSelector,omitempty" tf:"-"`
 
 	// The name of key pair used to bind.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.KeyPair
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.KeyPair
 	KeyPairName *string `json:"keyPairName,omitempty" tf:"key_pair_name,omitempty"`
 
 	// Reference to a KeyPair in ecs to populate keyPairName.
@@ -69,7 +69,7 @@ type KeyPairAttachmentParameters struct {
 	Force *bool `json:"force,omitempty" tf:"force,omitempty"`
 
 	// The list of ECS instance's IDs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +crossplane:generate:reference:refFieldName=InstanceRefs
 	// +crossplane:generate:reference:selectorFieldName=InstanceSelector
 	// +kubebuilder:validation:Optional
@@ -85,7 +85,7 @@ type KeyPairAttachmentParameters struct {
 	InstanceSelector *v1.Selector `json:"instanceSelector,omitempty" tf:"-"`
 
 	// The name of key pair used to bind.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.KeyPair
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.KeyPair
 	// +kubebuilder:validation:Optional
 	KeyPairName *string `json:"keyPairName,omitempty" tf:"key_pair_name,omitempty"`
 

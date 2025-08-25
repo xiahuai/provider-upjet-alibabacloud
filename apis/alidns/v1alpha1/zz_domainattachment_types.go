@@ -16,7 +16,7 @@ import (
 type DomainAttachmentInitParameters struct {
 
 	// The domain names bound to the DNS instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.Domain
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.Domain
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("domain_name",false)
 	// +listType=set
 	DomainNames []*string `json:"domainNames,omitempty" tf:"domain_names,omitempty"`
@@ -30,7 +30,7 @@ type DomainAttachmentInitParameters struct {
 	DomainNamesSelector *v1.Selector `json:"domainNamesSelector,omitempty" tf:"-"`
 
 	// The id of the DNS instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.Instance
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
 	// Reference to a Instance in alidns to populate instanceId.
@@ -58,7 +58,7 @@ type DomainAttachmentObservation struct {
 type DomainAttachmentParameters struct {
 
 	// The domain names bound to the DNS instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.Domain
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.Domain
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("domain_name",false)
 	// +kubebuilder:validation:Optional
 	// +listType=set
@@ -73,7 +73,7 @@ type DomainAttachmentParameters struct {
 	DomainNamesSelector *v1.Selector `json:"domainNamesSelector,omitempty" tf:"-"`
 
 	// The id of the DNS instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.Instance
 	// +kubebuilder:validation:Optional
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 

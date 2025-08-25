@@ -147,8 +147,8 @@ type InstanceInitParameters struct {
 	RestoreTime *string `json:"restoreTime,omitempty" tf:"restore_time,omitempty"`
 
 	// The Specify the global resource descriptor ARN (Alibaba Cloud Resource Name) information of the role to be authorized, and use the related key management services after the authorization is completed, in the format: acs:ram::$accountID:role/$roleName.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.RoleArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.RoleArnExtractor()
 	RoleArn *string `json:"roleArn,omitempty" tf:"role_arn,omitempty"`
 
 	// Reference to a Role in ram to populate roleArn.
@@ -168,8 +168,8 @@ type InstanceInitParameters struct {
 	SecondaryZoneID *string `json:"secondaryZoneId,omitempty" tf:"secondary_zone_id,omitempty"`
 
 	// The ID of security groups. Separate multiple security group IDs with commas (,), such as sg-***,sg-***,sg-***.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate securityGroupId.
@@ -213,8 +213,8 @@ type InstanceInitParameters struct {
 	VPCAuthMode *string `json:"vpcAuthMode,omitempty" tf:"vpc_auth_mode,omitempty"`
 
 	// The ID of VSwitch.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -611,8 +611,8 @@ type InstanceParameters struct {
 	RestoreTime *string `json:"restoreTime,omitempty" tf:"restore_time,omitempty"`
 
 	// The Specify the global resource descriptor ARN (Alibaba Cloud Resource Name) information of the role to be authorized, and use the related key management services after the authorization is completed, in the format: acs:ram::$accountID:role/$roleName.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.RoleArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.RoleArnExtractor()
 	// +kubebuilder:validation:Optional
 	RoleArn *string `json:"roleArn,omitempty" tf:"role_arn,omitempty"`
 
@@ -635,8 +635,8 @@ type InstanceParameters struct {
 	SecondaryZoneID *string `json:"secondaryZoneId,omitempty" tf:"secondary_zone_id,omitempty"`
 
 	// The ID of security groups. Separate multiple security group IDs with commas (,), such as sg-***,sg-***,sg-***.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
@@ -690,8 +690,8 @@ type InstanceParameters struct {
 	VPCAuthMode *string `json:"vpcAuthMode,omitempty" tf:"vpc_auth_mode,omitempty"`
 
 	// The ID of VSwitch.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 

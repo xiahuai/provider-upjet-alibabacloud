@@ -299,7 +299,7 @@ type RouteConfigParameters struct {
 type RoutesInitParameters struct {
 
 	// Function name
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
 	FunctionName *string `json:"functionName,omitempty" tf:"function_name,omitempty"`
 
 	// Reference to a Function in fcv3 to populate functionName.
@@ -344,7 +344,7 @@ type RoutesObservation struct {
 type RoutesParameters struct {
 
 	// Function name
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
 	// +kubebuilder:validation:Optional
 	FunctionName *string `json:"functionName,omitempty" tf:"function_name,omitempty"`
 

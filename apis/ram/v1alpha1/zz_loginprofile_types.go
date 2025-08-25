@@ -25,7 +25,7 @@ type LoginProfileInitParameters struct {
 	PasswordResetRequired *bool `json:"passwordResetRequired,omitempty" tf:"password_reset_required,omitempty"`
 
 	// The user name.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.User
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.User
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
 	UserName *string `json:"userName,omitempty" tf:"user_name,omitempty"`
 
@@ -74,7 +74,7 @@ type LoginProfileParameters struct {
 	PasswordResetRequired *bool `json:"passwordResetRequired,omitempty" tf:"password_reset_required,omitempty"`
 
 	// The user name.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.User
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.User
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("name",false)
 	// +kubebuilder:validation:Optional
 	UserName *string `json:"userName,omitempty" tf:"user_name,omitempty"`

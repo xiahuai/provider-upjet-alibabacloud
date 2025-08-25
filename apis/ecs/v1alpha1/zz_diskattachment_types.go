@@ -22,7 +22,7 @@ type DiskAttachmentInitParameters struct {
 	DeleteWithInstance *bool `json:"deleteWithInstance,omitempty" tf:"delete_with_instance,omitempty"`
 
 	// ID of the Disk to be attached.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Disk
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Disk
 	DiskID *string `json:"diskId,omitempty" tf:"disk_id,omitempty"`
 
 	// Reference to a Disk in ecs to populate diskId.
@@ -34,7 +34,7 @@ type DiskAttachmentInitParameters struct {
 	DiskIDSelector *v1.Selector `json:"diskIdSelector,omitempty" tf:"-"`
 
 	// ID of the Instance to attach to.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
 	// Reference to a Instance in ecs to populate instanceId.
@@ -90,7 +90,7 @@ type DiskAttachmentParameters struct {
 	DeleteWithInstance *bool `json:"deleteWithInstance,omitempty" tf:"delete_with_instance,omitempty"`
 
 	// ID of the Disk to be attached.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Disk
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Disk
 	// +kubebuilder:validation:Optional
 	DiskID *string `json:"diskId,omitempty" tf:"disk_id,omitempty"`
 
@@ -103,7 +103,7 @@ type DiskAttachmentParameters struct {
 	DiskIDSelector *v1.Selector `json:"diskIdSelector,omitempty" tf:"-"`
 
 	// ID of the Instance to attach to.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +kubebuilder:validation:Optional
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 

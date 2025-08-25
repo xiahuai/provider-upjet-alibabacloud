@@ -190,7 +190,7 @@ type ServerlessKubernetesInitParameters struct {
 	RetainResources []*string `json:"retainResources,omitempty" tf:"retain_resources,omitempty"`
 
 	// The ID of the security group to which the ECS instances in the cluster belong. If it is not specified, a new Security group will be built.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate securityGroupId.
@@ -218,7 +218,7 @@ type ServerlessKubernetesInitParameters struct {
 	TimeZone *string `json:"timeZone,omitempty" tf:"time_zone,omitempty"`
 
 	// The vpc where new kubernetes cluster will be located. Specify one vpc's id, if it is not specified, a new VPC will be built.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -233,7 +233,7 @@ type ServerlessKubernetesInitParameters struct {
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
 
 	// (Removed since v1.229.1) The vswitch where new kubernetes cluster will be located. Specify one vswitch's id, if it is not specified, a new VPC and VSwicth will be built. It must be in the zone which availability_zone specified.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -245,7 +245,7 @@ type ServerlessKubernetesInitParameters struct {
 	VswitchIDSelector *v1.Selector `json:"vswitchIdSelector,omitempty" tf:"-"`
 
 	// The vswitches where new kubernetes cluster will be located.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchIds []*string `json:"vswitchIds,omitempty" tf:"vswitch_ids,omitempty"`
 
 	// References to Vswitch in vpc to populate vswitchIds.
@@ -535,7 +535,7 @@ type ServerlessKubernetesParameters struct {
 	RetainResources []*string `json:"retainResources,omitempty" tf:"retain_resources,omitempty"`
 
 	// The ID of the security group to which the ECS instances in the cluster belong. If it is not specified, a new Security group will be built.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
@@ -569,7 +569,7 @@ type ServerlessKubernetesParameters struct {
 	TimeZone *string `json:"timeZone,omitempty" tf:"time_zone,omitempty"`
 
 	// The vpc where new kubernetes cluster will be located. Specify one vpc's id, if it is not specified, a new VPC will be built.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
@@ -586,7 +586,7 @@ type ServerlessKubernetesParameters struct {
 	Version *string `json:"version,omitempty" tf:"version,omitempty"`
 
 	// (Removed since v1.229.1) The vswitch where new kubernetes cluster will be located. Specify one vswitch's id, if it is not specified, a new VPC and VSwicth will be built. It must be in the zone which availability_zone specified.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
@@ -599,7 +599,7 @@ type ServerlessKubernetesParameters struct {
 	VswitchIDSelector *v1.Selector `json:"vswitchIdSelector,omitempty" tf:"-"`
 
 	// The vswitches where new kubernetes cluster will be located.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchIds []*string `json:"vswitchIds,omitempty" tf:"vswitch_ids,omitempty"`
 

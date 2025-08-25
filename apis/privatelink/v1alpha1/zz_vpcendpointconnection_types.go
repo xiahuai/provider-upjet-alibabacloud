@@ -22,7 +22,7 @@ type VpcEndpointConnectionInitParameters struct {
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run,omitempty"`
 
 	// The endpoint ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/privatelink/v1alpha1.VpcEndpoint
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/privatelink/v1alpha1.VpcEndpoint
 	EndpointID *string `json:"endpointId,omitempty" tf:"endpoint_id,omitempty"`
 
 	// Reference to a VpcEndpoint in privatelink to populate endpointId.
@@ -34,7 +34,7 @@ type VpcEndpointConnectionInitParameters struct {
 	EndpointIDSelector *v1.Selector `json:"endpointIdSelector,omitempty" tf:"-"`
 
 	// The endpoint service ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/privatelink/v1alpha1.VPCEndpointService
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/privatelink/v1alpha1.VPCEndpointService
 	ServiceID *string `json:"serviceId,omitempty" tf:"service_id,omitempty"`
 
 	// Reference to a VPCEndpointService in privatelink to populate serviceId.
@@ -78,7 +78,7 @@ type VpcEndpointConnectionParameters struct {
 	DryRun *bool `json:"dryRun,omitempty" tf:"dry_run,omitempty"`
 
 	// The endpoint ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/privatelink/v1alpha1.VpcEndpoint
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/privatelink/v1alpha1.VpcEndpoint
 	// +kubebuilder:validation:Optional
 	EndpointID *string `json:"endpointId,omitempty" tf:"endpoint_id,omitempty"`
 
@@ -96,7 +96,7 @@ type VpcEndpointConnectionParameters struct {
 	Region *string `json:"region,omitempty" tf:"-"`
 
 	// The endpoint service ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/privatelink/v1alpha1.VPCEndpointService
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/privatelink/v1alpha1.VPCEndpointService
 	// +kubebuilder:validation:Optional
 	ServiceID *string `json:"serviceId,omitempty" tf:"service_id,omitempty"`
 

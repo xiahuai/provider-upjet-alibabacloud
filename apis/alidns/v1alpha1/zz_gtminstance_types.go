@@ -68,7 +68,7 @@ type GtmInstanceInitParameters struct {
 	AlertConfig []AlertConfigInitParameters `json:"alertConfig,omitempty" tf:"alert_config,omitempty"`
 
 	// The alert group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/cloudmonitorservice/v1alpha1.AlarmContactGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/cloudmonitorservice/v1alpha1.AlarmContactGroup
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("alarm_contact_group_name",false)
 	// +listType=set
 	AlertGroup []*string `json:"alertGroup,omitempty" tf:"alert_group,omitempty"`
@@ -209,7 +209,7 @@ type GtmInstanceParameters struct {
 	AlertConfig []AlertConfigParameters `json:"alertConfig,omitempty" tf:"alert_config,omitempty"`
 
 	// The alert group.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/cloudmonitorservice/v1alpha1.AlarmContactGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/cloudmonitorservice/v1alpha1.AlarmContactGroup
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("alarm_contact_group_name",false)
 	// +kubebuilder:validation:Optional
 	// +listType=set

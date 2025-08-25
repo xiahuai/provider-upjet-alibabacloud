@@ -159,7 +159,7 @@ type LaunchTemplateInitParameters struct {
 	DefaultVersionNumber *float64 `json:"defaultVersionNumber,omitempty" tf:"default_version_number,omitempty"`
 
 	// The Deployment Set Id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.DeploymentSet
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.DeploymentSet
 	DeploymentSetID *string `json:"deploymentSetId,omitempty" tf:"deployment_set_id,omitempty"`
 
 	// Reference to a DeploymentSet in ecs to populate deploymentSetId.
@@ -219,7 +219,7 @@ type LaunchTemplateInitParameters struct {
 	IoOptimized *string `json:"ioOptimized,omitempty" tf:"io_optimized,omitempty"`
 
 	// The name of the key pair.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.KeyPair
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.KeyPair
 	KeyPairName *string `json:"keyPairName,omitempty" tf:"key_pair_name,omitempty"`
 
 	// Reference to a KeyPair in ecs to populate keyPairName.
@@ -261,7 +261,7 @@ type LaunchTemplateInitParameters struct {
 	SecurityEnhancementStrategy *string `json:"securityEnhancementStrategy,omitempty" tf:"security_enhancement_strategy,omitempty"`
 
 	// The security group ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate securityGroupId.
@@ -273,7 +273,7 @@ type LaunchTemplateInitParameters struct {
 	SecurityGroupIDSelector *v1.Selector `json:"securityGroupIdSelector,omitempty" tf:"-"`
 
 	// The ID of security group N to which to assign the instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupSelector
 	SecurityGroupIds []*string `json:"securityGroupIds,omitempty" tf:"security_group_ids,omitempty"`
@@ -316,7 +316,7 @@ type LaunchTemplateInitParameters struct {
 	UserData *string `json:"userData,omitempty" tf:"user_data,omitempty"`
 
 	// The ID of the VPC.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -331,7 +331,7 @@ type LaunchTemplateInitParameters struct {
 	VersionDescription *string `json:"versionDescription,omitempty" tf:"version_description,omitempty"`
 
 	// When creating a VPC-Connected instance, you must specify its VSwitch ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -361,7 +361,7 @@ type LaunchTemplateNetworkInterfacesInitParameters struct {
 	PrimaryIP *string `json:"primaryIp,omitempty" tf:"primary_ip,omitempty"`
 
 	// The security group ID must be one in the same VPC.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
@@ -374,7 +374,7 @@ type LaunchTemplateNetworkInterfacesInitParameters struct {
 	SecurityGroupIDSelector *v1.Selector `json:"securityGroupIdSelector,omitempty" tf:"-"`
 
 	// The VSwitch ID for ENI. The instance must be in the same zone of the same VPC network as the ENI, but they may belong to different VSwitches.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
@@ -427,7 +427,7 @@ type LaunchTemplateNetworkInterfacesParameters struct {
 	PrimaryIP *string `json:"primaryIp,omitempty" tf:"primary_ip,omitempty"`
 
 	// The security group ID must be one in the same VPC.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
@@ -441,7 +441,7 @@ type LaunchTemplateNetworkInterfacesParameters struct {
 	SecurityGroupIDSelector *v1.Selector `json:"securityGroupIdSelector,omitempty" tf:"-"`
 
 	// The VSwitch ID for ENI. The instance must be in the same zone of the same VPC network as the ENI, but they may belong to different VSwitches.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
@@ -632,7 +632,7 @@ type LaunchTemplateParameters struct {
 	DefaultVersionNumber *float64 `json:"defaultVersionNumber,omitempty" tf:"default_version_number,omitempty"`
 
 	// The Deployment Set Id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.DeploymentSet
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.DeploymentSet
 	// +kubebuilder:validation:Optional
 	DeploymentSetID *string `json:"deploymentSetId,omitempty" tf:"deployment_set_id,omitempty"`
 
@@ -709,7 +709,7 @@ type LaunchTemplateParameters struct {
 	IoOptimized *string `json:"ioOptimized,omitempty" tf:"io_optimized,omitempty"`
 
 	// The name of the key pair.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.KeyPair
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.KeyPair
 	// +kubebuilder:validation:Optional
 	KeyPairName *string `json:"keyPairName,omitempty" tf:"key_pair_name,omitempty"`
 
@@ -767,7 +767,7 @@ type LaunchTemplateParameters struct {
 	SecurityEnhancementStrategy *string `json:"securityEnhancementStrategy,omitempty" tf:"security_enhancement_strategy,omitempty"`
 
 	// The security group ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
@@ -780,7 +780,7 @@ type LaunchTemplateParameters struct {
 	SecurityGroupIDSelector *v1.Selector `json:"securityGroupIdSelector,omitempty" tf:"-"`
 
 	// The ID of security group N to which to assign the instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupSelector
 	// +kubebuilder:validation:Optional
@@ -833,7 +833,7 @@ type LaunchTemplateParameters struct {
 	UserData *string `json:"userData,omitempty" tf:"user_data,omitempty"`
 
 	// The ID of the VPC.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
@@ -850,7 +850,7 @@ type LaunchTemplateParameters struct {
 	VersionDescription *string `json:"versionDescription,omitempty" tf:"version_description,omitempty"`
 
 	// When creating a VPC-Connected instance, you must specify its VSwitch ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 

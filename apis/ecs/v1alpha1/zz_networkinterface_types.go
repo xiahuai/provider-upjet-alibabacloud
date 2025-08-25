@@ -58,7 +58,7 @@ type NetworkInterfaceInitParameters struct {
 	SecondaryPrivateIPAddressCount *float64 `json:"secondaryPrivateIpAddressCount,omitempty" tf:"secondary_private_ip_address_count,omitempty"`
 
 	// The ID of security group N. The security groups and the ENI must belong to the same VPC. The valid values of N are based on the maximum number of security groups to which an ENI can be added. NOTE: Either security_group_ids or security_groups must be set with valid security group IDs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupSelector
 	// +listType=set
@@ -80,7 +80,7 @@ type NetworkInterfaceInitParameters struct {
 	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ID of the VSwitch in the specified VPC. The private IP addresses assigned to the ENI must be available IP addresses within the CIDR block of the VSwitch.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -222,7 +222,7 @@ type NetworkInterfaceParameters struct {
 	SecondaryPrivateIPAddressCount *float64 `json:"secondaryPrivateIpAddressCount,omitempty" tf:"secondary_private_ip_address_count,omitempty"`
 
 	// The ID of security group N. The security groups and the ENI must belong to the same VPC. The valid values of N are based on the maximum number of security groups to which an ENI can be added. NOTE: Either security_group_ids or security_groups must be set with valid security group IDs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupSelector
 	// +kubebuilder:validation:Optional
@@ -247,7 +247,7 @@ type NetworkInterfaceParameters struct {
 	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ID of the VSwitch in the specified VPC. The private IP addresses assigned to the ENI must be available IP addresses within the CIDR block of the VSwitch.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 

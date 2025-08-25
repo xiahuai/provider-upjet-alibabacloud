@@ -19,7 +19,7 @@ type BindVpcsInitParameters struct {
 	RegionID *string `json:"regionId,omitempty" tf:"region_id,omitempty"`
 
 	// VPC ID
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -34,7 +34,7 @@ type BindVpcsInitParameters struct {
 	VPCOwnerID *string `json:"vpcOwnerId,omitempty" tf:"vpc_owner_id,omitempty"`
 
 	// vswitch id
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -68,7 +68,7 @@ type BindVpcsParameters struct {
 	RegionID *string `json:"regionId,omitempty" tf:"region_id,omitempty"`
 
 	// VPC ID
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
@@ -85,7 +85,7 @@ type BindVpcsParameters struct {
 	VPCOwnerID *string `json:"vpcOwnerId,omitempty" tf:"vpc_owner_id,omitempty"`
 
 	// vswitch id
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
@@ -140,7 +140,7 @@ type InstanceInitParameters struct {
 	Spec *float64 `json:"spec,omitempty" tf:"spec,omitempty"`
 
 	// Instance VPC id
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -155,7 +155,7 @@ type InstanceInitParameters struct {
 	VPCNum *float64 `json:"vpcNum,omitempty" tf:"vpc_num,omitempty"`
 
 	// Instance bind vswitches
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +listType=set
 	VswitchIds []*string `json:"vswitchIds,omitempty" tf:"vswitch_ids,omitempty"`
 
@@ -168,7 +168,7 @@ type InstanceInitParameters struct {
 	VswitchIdsSelector *v1.Selector `json:"vswitchIdsSelector,omitempty" tf:"-"`
 
 	// zone id
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("zone_id",false)
 	// +listType=set
 	ZoneIds []*string `json:"zoneIds,omitempty" tf:"zone_ids,omitempty"`
@@ -313,7 +313,7 @@ type InstanceParameters struct {
 	Spec *float64 `json:"spec,omitempty" tf:"spec,omitempty"`
 
 	// Instance VPC id
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
@@ -330,7 +330,7 @@ type InstanceParameters struct {
 	VPCNum *float64 `json:"vpcNum,omitempty" tf:"vpc_num,omitempty"`
 
 	// Instance bind vswitches
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	// +listType=set
 	VswitchIds []*string `json:"vswitchIds,omitempty" tf:"vswitch_ids,omitempty"`
@@ -344,7 +344,7 @@ type InstanceParameters struct {
 	VswitchIdsSelector *v1.Selector `json:"vswitchIdsSelector,omitempty" tf:"-"`
 
 	// zone id
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractParamPath("zone_id",false)
 	// +kubebuilder:validation:Optional
 	// +listType=set

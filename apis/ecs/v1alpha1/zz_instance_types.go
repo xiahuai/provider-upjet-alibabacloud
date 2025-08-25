@@ -37,7 +37,7 @@ type InstanceDataDisksInitParameters struct {
 	Encrypted *bool `json:"encrypted,omitempty" tf:"encrypted,omitempty"`
 
 	// The KMS key ID corresponding to the Nth data disk.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
 
@@ -138,7 +138,7 @@ type InstanceDataDisksParameters struct {
 	Encrypted *bool `json:"encrypted,omitempty" tf:"encrypted,omitempty"`
 
 	// The KMS key ID corresponding to the Nth data disk.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
@@ -256,7 +256,7 @@ type InstanceInitParameters struct {
 	IPv6Addresses []*string `json:"ipv6Addresses,omitempty" tf:"ipv6_addresses,omitempty"`
 
 	// The Image to use for the instance. ECS instance's image can be replaced via changing image_id. When it is changed, the instance will reboot to make the change take effect. If you do not use launch_template_id or launch_template_name to specify a launch template, you must specify image_id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Image
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Image
 	ImageID *string `json:"imageId,omitempty" tf:"image_id,omitempty"`
 
 	// Reference to a Image in ecs to populate imageId.
@@ -302,7 +302,7 @@ type InstanceInitParameters struct {
 	KMSEncryptionContext map[string]*string `json:"kmsEncryptionContext,omitempty" tf:"kms_encryption_context,omitempty"`
 
 	// The name of key pair that can login ECS instance successfully without password. If it is specified, the password would be invalid.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.KeyPair
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.KeyPair
 	KeyName *string `json:"keyName,omitempty" tf:"key_name,omitempty"`
 
 	// Reference to a KeyPair in ecs to populate keyName.
@@ -314,7 +314,7 @@ type InstanceInitParameters struct {
 	KeyNameSelector *v1.Selector `json:"keyNameSelector,omitempty" tf:"-"`
 
 	// The ID of the launch template. For more information, see DescribeLaunchTemplates.To use a launch template to create an instance, you must use the launch_template_id or launch_template_name parameter to specify the launch template.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.LaunchTemplate
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.LaunchTemplate
 	LaunchTemplateID *string `json:"launchTemplateId,omitempty" tf:"launch_template_id,omitempty"`
 
 	// Reference to a LaunchTemplate in ecs to populate launchTemplateId.
@@ -404,7 +404,7 @@ type InstanceInitParameters struct {
 	SecurityGroupSelector *v1.Selector `json:"securityGroupSelector,omitempty" tf:"-"`
 
 	// A list of security group ids to associate with. If you do not use launch_template_id or launch_template_name to specify a launch template, you must specify security_groups.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupSelector
 	// +listType=set
@@ -472,7 +472,7 @@ type InstanceInitParameters struct {
 	UserData *string `json:"userData,omitempty" tf:"user_data,omitempty"`
 
 	// The ID of the VPC.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -488,7 +488,7 @@ type InstanceInitParameters struct {
 	VolumeTags map[string]*string `json:"volumeTags,omitempty" tf:"volume_tags,omitempty"`
 
 	// The virtual switch ID to launch in VPC. This parameter must be set unless you can create classic network instances. When it is changed, the instance will reboot to make the change take effect.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -942,7 +942,7 @@ type InstanceParameters struct {
 	IPv6Addresses []*string `json:"ipv6Addresses,omitempty" tf:"ipv6_addresses,omitempty"`
 
 	// The Image to use for the instance. ECS instance's image can be replaced via changing image_id. When it is changed, the instance will reboot to make the change take effect. If you do not use launch_template_id or launch_template_name to specify a launch template, you must specify image_id.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Image
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Image
 	// +kubebuilder:validation:Optional
 	ImageID *string `json:"imageId,omitempty" tf:"image_id,omitempty"`
 
@@ -999,7 +999,7 @@ type InstanceParameters struct {
 	KMSEncryptionContext map[string]*string `json:"kmsEncryptionContext,omitempty" tf:"kms_encryption_context,omitempty"`
 
 	// The name of key pair that can login ECS instance successfully without password. If it is specified, the password would be invalid.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.KeyPair
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.KeyPair
 	// +kubebuilder:validation:Optional
 	KeyName *string `json:"keyName,omitempty" tf:"key_name,omitempty"`
 
@@ -1012,7 +1012,7 @@ type InstanceParameters struct {
 	KeyNameSelector *v1.Selector `json:"keyNameSelector,omitempty" tf:"-"`
 
 	// The ID of the launch template. For more information, see DescribeLaunchTemplates.To use a launch template to create an instance, you must use the launch_template_id or launch_template_name parameter to specify the launch template.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.LaunchTemplate
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.LaunchTemplate
 	// +kubebuilder:validation:Optional
 	LaunchTemplateID *string `json:"launchTemplateId,omitempty" tf:"launch_template_id,omitempty"`
 
@@ -1131,7 +1131,7 @@ type InstanceParameters struct {
 	SecurityGroupSelector *v1.Selector `json:"securityGroupSelector,omitempty" tf:"-"`
 
 	// A list of security group ids to associate with. If you do not use launch_template_id or launch_template_name to specify a launch template, you must specify security_groups.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +crossplane:generate:reference:refFieldName=SecurityGroupRefs
 	// +crossplane:generate:reference:selectorFieldName=SecurityGroupSelector
 	// +kubebuilder:validation:Optional
@@ -1219,7 +1219,7 @@ type InstanceParameters struct {
 	UserData *string `json:"userData,omitempty" tf:"user_data,omitempty"`
 
 	// The ID of the VPC.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
@@ -1237,7 +1237,7 @@ type InstanceParameters struct {
 	VolumeTags map[string]*string `json:"volumeTags,omitempty" tf:"volume_tags,omitempty"`
 
 	// The virtual switch ID to launch in VPC. This parameter must be set unless you can create classic network instances. When it is changed, the instance will reboot to make the change take effect.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 

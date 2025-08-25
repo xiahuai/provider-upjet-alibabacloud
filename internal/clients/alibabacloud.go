@@ -8,7 +8,8 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/version"
+
+	"github.com/crossplane-contrib/provider-alibabacloud/internal/version"
 	v1 "github.com/crossplane/crossplane-runtime/apis/common/v1"
 	"github.com/crossplane/crossplane-runtime/pkg/fieldpath"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -20,7 +21,7 @@ import (
 
 	"github.com/crossplane/upjet/pkg/terraform"
 
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/v1beta1"
+	"github.com/crossplane-contrib/provider-alibabacloud/apis/v1beta1"
 )
 
 const (

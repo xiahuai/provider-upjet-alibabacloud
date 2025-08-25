@@ -7,26 +7,27 @@ package config
 import (
 	// Note(turkenh): we are importing this to embed provider schema document
 	_ "embed"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/fcv3"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/slb"
 
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/ack"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/ackone"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/alb"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/alidns"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/cdn"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/cloudmonitorservice"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/ecs"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/kms"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/messageservice"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/oss"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/polardb"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/privatelink"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/quotas"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/ram"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/tair"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/vpc"
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/hack"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/fcv3"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/slb"
+
+	"github.com/crossplane-contrib/provider-alibabacloud/config/ack"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/ackone"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/alb"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/alidns"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/cdn"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/cloudmonitorservice"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/ecs"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/kms"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/messageservice"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/oss"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/polardb"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/privatelink"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/quotas"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/ram"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/tair"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/vpc"
+	"github.com/crossplane-contrib/provider-alibabacloud/hack"
 	"github.com/crossplane/upjet/pkg/registry/reference"
 
 	ujconfig "github.com/crossplane/upjet/pkg/config"
@@ -34,7 +35,7 @@ import (
 
 const (
 	resourcePrefix = "alicloud"
-	modulePath     = "github.com/crossplane-contrib/provider-upjet-alibabacloud"
+	modulePath     = "github.com/crossplane-contrib/provider-alibabacloud"
 )
 
 //go:embed schema.json

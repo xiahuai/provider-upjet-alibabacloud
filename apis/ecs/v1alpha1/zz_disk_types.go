@@ -48,7 +48,7 @@ type DiskInitParameters struct {
 	Encrypted *bool `json:"encrypted,omitempty" tf:"encrypted,omitempty"`
 
 	// The ID of the instance to which the created subscription disk is automatically attached.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
 	// Reference to a Instance in ecs to populate instanceId.
@@ -60,7 +60,7 @@ type DiskInitParameters struct {
 	InstanceIDSelector *v1.Selector `json:"instanceIdSelector,omitempty" tf:"-"`
 
 	// The ID of the Key Management Service (KMS) key that is used for the disk. NOTE: kms_key_id is only valid when encrypted is true.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
 
 	// Reference to a Key in kms to populate kmsKeyId.
@@ -246,7 +246,7 @@ type DiskParameters struct {
 	Encrypted *bool `json:"encrypted,omitempty" tf:"encrypted,omitempty"`
 
 	// The ID of the instance to which the created subscription disk is automatically attached.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +kubebuilder:validation:Optional
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
@@ -259,7 +259,7 @@ type DiskParameters struct {
 	InstanceIDSelector *v1.Selector `json:"instanceIdSelector,omitempty" tf:"-"`
 
 	// The ID of the Key Management Service (KMS) key that is used for the disk. NOTE: kms_key_id is only valid when encrypted is true.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	// +kubebuilder:validation:Optional
 	KMSKeyID *string `json:"kmsKeyId,omitempty" tf:"kms_key_id,omitempty"`
 

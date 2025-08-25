@@ -16,7 +16,7 @@ import (
 type NetworkInterfaceAttachmentInitParameters struct {
 
 	// The ID of the ECS instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
 	// Reference to a Instance in ecs to populate instanceId.
@@ -31,7 +31,7 @@ type NetworkInterfaceAttachmentInitParameters struct {
 	NetworkCardIndex *float64 `json:"networkCardIndex,omitempty" tf:"network_card_index,omitempty"`
 
 	// The ID of the network interface.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.NetworkInterface
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.NetworkInterface
 	NetworkInterfaceID *string `json:"networkInterfaceId,omitempty" tf:"network_interface_id,omitempty"`
 
 	// Reference to a NetworkInterface in ecs to populate networkInterfaceId.
@@ -73,7 +73,7 @@ type NetworkInterfaceAttachmentObservation struct {
 type NetworkInterfaceAttachmentParameters struct {
 
 	// The ID of the ECS instance.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.Instance
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.Instance
 	// +kubebuilder:validation:Optional
 	InstanceID *string `json:"instanceId,omitempty" tf:"instance_id,omitempty"`
 
@@ -90,7 +90,7 @@ type NetworkInterfaceAttachmentParameters struct {
 	NetworkCardIndex *float64 `json:"networkCardIndex,omitempty" tf:"network_card_index,omitempty"`
 
 	// The ID of the network interface.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.NetworkInterface
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.NetworkInterface
 	// +kubebuilder:validation:Optional
 	NetworkInterfaceID *string `json:"networkInterfaceId,omitempty" tf:"network_interface_id,omitempty"`
 

@@ -508,7 +508,7 @@ type LifecycleRuleParameters struct {
 type LoggingInitParameters struct {
 
 	// The name of the bucket that will receive the log objects.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	TargetBucket *string `json:"targetBucket,omitempty" tf:"target_bucket,omitempty"`
 
@@ -536,7 +536,7 @@ type LoggingObservation struct {
 type LoggingParameters struct {
 
 	// The name of the bucket that will receive the log objects.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	TargetBucket *string `json:"targetBucket,omitempty" tf:"target_bucket,omitempty"`
@@ -660,7 +660,7 @@ type ServerSideEncryptionRuleInitParameters struct {
 	KMSDataEncryption *string `json:"kmsDataEncryption,omitempty" tf:"kms_data_encryption,omitempty"`
 
 	// The alibaba cloud KMS master key ID used for the SSE-KMS encryption.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	KMSMasterKeyID *string `json:"kmsMasterKeyId,omitempty" tf:"kms_master_key_id,omitempty"`
 
@@ -695,7 +695,7 @@ type ServerSideEncryptionRuleParameters struct {
 	KMSDataEncryption *string `json:"kmsDataEncryption,omitempty" tf:"kms_data_encryption,omitempty"`
 
 	// The alibaba cloud KMS master key ID used for the SSE-KMS encryption.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/kms/v1alpha1.Key
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/kms/v1alpha1.Key
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	KMSMasterKeyID *string `json:"kmsMasterKeyId,omitempty" tf:"kms_master_key_id,omitempty"`

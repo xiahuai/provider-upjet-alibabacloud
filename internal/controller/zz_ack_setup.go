@@ -9,14 +9,14 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	autoscalingconfig "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/autoscalingconfig"
-	edgekubernetes "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/edgekubernetes"
-	kubernetes "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/kubernetes"
-	kubernetesaddon "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/kubernetesaddon"
-	kubernetesnodepool "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/kubernetesnodepool"
-	kubernetespermissions "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/kubernetespermissions"
-	managedkubernetes "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/managedkubernetes"
-	serverlesskubernetes "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ack/serverlesskubernetes"
+	autoscalingconfig "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ack/autoscalingconfig"
+	edgekubernetes "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ack/edgekubernetes"
+	kubernetes "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ack/kubernetes"
+	kubernetesaddon "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ack/kubernetesaddon"
+	kubernetesnodepool "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ack/kubernetesnodepool"
+	kubernetespermissions "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ack/kubernetespermissions"
+	managedkubernetes "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ack/managedkubernetes"
+	serverlesskubernetes "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ack/serverlesskubernetes"
 )
 
 // Setup_ack creates all controllers with the supplied logger and adds them to

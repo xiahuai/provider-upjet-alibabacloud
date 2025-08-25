@@ -19,7 +19,7 @@ type CustomLineInitParameters struct {
 	CustomLineName *string `json:"customLineName,omitempty" tf:"custom_line_name,omitempty"`
 
 	// The Domain name.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.Domain
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.Domain
 	DomainName *string `json:"domainName,omitempty" tf:"domain_name,omitempty"`
 
 	// Reference to a Domain in alidns to populate domainName.
@@ -61,7 +61,7 @@ type CustomLineParameters struct {
 	CustomLineName *string `json:"customLineName,omitempty" tf:"custom_line_name,omitempty"`
 
 	// The Domain name.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.Domain
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.Domain
 	// +kubebuilder:validation:Optional
 	DomainName *string `json:"domainName,omitempty" tf:"domain_name,omitempty"`
 

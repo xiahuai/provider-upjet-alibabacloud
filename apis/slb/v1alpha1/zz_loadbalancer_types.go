@@ -49,8 +49,8 @@ type LoadBalancerInitParameters struct {
 	LoadBalancerSpec *string `json:"loadBalancerSpec,omitempty" tf:"load_balancer_spec,omitempty"`
 
 	// The primary zone ID of the SLB instance. If not specified, the system will be randomly assigned. You can query the primary and standby zones in a region by calling the DescribeZone API.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.VSwitchZoneIdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.VSwitchZoneIdExtractor()
 	MasterZoneID *string `json:"masterZoneId,omitempty" tf:"master_zone_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate masterZoneId.
@@ -77,8 +77,8 @@ type LoadBalancerInitParameters struct {
 	ResourceGroupID *string `json:"resourceGroupId,omitempty" tf:"resource_group_id,omitempty"`
 
 	// The standby zone ID of the SLB instance. If not specified, the system will be randomly assigned. You can query the primary and standby zones in a region by calling the DescribeZone API.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.VSwitchZoneIdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.VSwitchZoneIdExtractor()
 	SlaveZoneID *string `json:"slaveZoneId,omitempty" tf:"slave_zone_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate slaveZoneId.
@@ -97,7 +97,7 @@ type LoadBalancerInitParameters struct {
 	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The VSwitch ID to launch in. Note: Required for a VPC SLB. If address_type is internet, it will be ignored.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate vswitchId.
@@ -225,8 +225,8 @@ type LoadBalancerParameters struct {
 	LoadBalancerSpec *string `json:"loadBalancerSpec,omitempty" tf:"load_balancer_spec,omitempty"`
 
 	// The primary zone ID of the SLB instance. If not specified, the system will be randomly assigned. You can query the primary and standby zones in a region by calling the DescribeZone API.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.VSwitchZoneIdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.VSwitchZoneIdExtractor()
 	// +kubebuilder:validation:Optional
 	MasterZoneID *string `json:"masterZoneId,omitempty" tf:"master_zone_id,omitempty"`
 
@@ -264,8 +264,8 @@ type LoadBalancerParameters struct {
 	ResourceGroupID *string `json:"resourceGroupId,omitempty" tf:"resource_group_id,omitempty"`
 
 	// The standby zone ID of the SLB instance. If not specified, the system will be randomly assigned. You can query the primary and standby zones in a region by calling the DescribeZone API.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.VSwitchZoneIdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.VSwitchZoneIdExtractor()
 	// +kubebuilder:validation:Optional
 	SlaveZoneID *string `json:"slaveZoneId,omitempty" tf:"slave_zone_id,omitempty"`
 
@@ -287,7 +287,7 @@ type LoadBalancerParameters struct {
 	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The VSwitch ID to launch in. Note: Required for a VPC SLB. If address_type is internet, it will be ignored.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 

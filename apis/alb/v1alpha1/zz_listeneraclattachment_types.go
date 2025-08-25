@@ -16,7 +16,7 @@ import (
 type ListenerAclAttachmentInitParameters struct {
 
 	// The ID list of the access policy group bound by the listener.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Acl
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Acl
 	ACLID *string `json:"aclId,omitempty" tf:"acl_id,omitempty"`
 
 	// Reference to a Acl in alb to populate aclId.
@@ -31,7 +31,7 @@ type ListenerAclAttachmentInitParameters struct {
 	ACLType *string `json:"aclType,omitempty" tf:"acl_type,omitempty"`
 
 	// Listener instance ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Listener
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Listener
 	ListenerID *string `json:"listenerId,omitempty" tf:"listener_id,omitempty"`
 
 	// Reference to a Listener in alb to populate listenerId.
@@ -64,7 +64,7 @@ type ListenerAclAttachmentObservation struct {
 type ListenerAclAttachmentParameters struct {
 
 	// The ID list of the access policy group bound by the listener.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Acl
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Acl
 	// +kubebuilder:validation:Optional
 	ACLID *string `json:"aclId,omitempty" tf:"acl_id,omitempty"`
 
@@ -81,7 +81,7 @@ type ListenerAclAttachmentParameters struct {
 	ACLType *string `json:"aclType,omitempty" tf:"acl_type,omitempty"`
 
 	// Listener instance ID.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Listener
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Listener
 	// +kubebuilder:validation:Optional
 	ListenerID *string `json:"listenerId,omitempty" tf:"listener_id,omitempty"`
 

@@ -45,7 +45,7 @@ type IspCityNodeParameters struct {
 type MonitorConfigInitParameters struct {
 
 	// The ID of the address pool.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.AddressPool
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.AddressPool
 	AddrPoolID *string `json:"addrPoolId,omitempty" tf:"addr_pool_id,omitempty"`
 
 	// Reference to a AddressPool in alidns to populate addrPoolId.
@@ -110,7 +110,7 @@ type MonitorConfigObservation struct {
 type MonitorConfigParameters struct {
 
 	// The ID of the address pool.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alidns/v1alpha1.AddressPool
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alidns/v1alpha1.AddressPool
 	// +kubebuilder:validation:Optional
 	AddrPoolID *string `json:"addrPoolId,omitempty" tf:"addr_pool_id,omitempty"`
 

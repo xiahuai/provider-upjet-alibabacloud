@@ -31,7 +31,7 @@ type AscriptInitParameters struct {
 	ExtAttributes []ExtAttributesInitParameters `json:"extAttributes,omitempty" tf:"ext_attributes,omitempty"`
 
 	// Listener ID of script attribution
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Listener
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Listener
 	ListenerID *string `json:"listenerId,omitempty" tf:"listener_id,omitempty"`
 
 	// Reference to a Listener in alb to populate listenerId.
@@ -105,7 +105,7 @@ type AscriptParameters struct {
 	ExtAttributes []ExtAttributesParameters `json:"extAttributes,omitempty" tf:"ext_attributes,omitempty"`
 
 	// Listener ID of script attribution
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/alb/v1alpha1.Listener
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/alb/v1alpha1.Listener
 	// +kubebuilder:validation:Optional
 	ListenerID *string `json:"listenerId,omitempty" tf:"listener_id,omitempty"`
 

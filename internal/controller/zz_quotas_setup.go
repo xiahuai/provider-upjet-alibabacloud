@@ -9,11 +9,11 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	quotaalarm "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/quotas/quotaalarm"
-	quotaapplication "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/quotas/quotaapplication"
-	templateapplications "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/quotas/templateapplications"
-	templatequota "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/quotas/templatequota"
-	templateservice "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/quotas/templateservice"
+	quotaalarm "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/quotas/quotaalarm"
+	quotaapplication "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/quotas/quotaapplication"
+	templateapplications "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/quotas/templateapplications"
+	templatequota "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/quotas/templatequota"
+	templateservice "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/quotas/templateservice"
 )
 
 // Setup_quotas creates all controllers with the supplied logger and adds them to

@@ -31,7 +31,7 @@ type CodeInitParameters struct {
 	Checksum *string `json:"checksum,omitempty" tf:"checksum,omitempty"`
 
 	// The name of the OSS Bucket that stores the function code ZIP package.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	OssBucketName *string `json:"ossBucketName,omitempty" tf:"oss_bucket_name,omitempty"`
 
 	// Reference to a Bucket in oss to populate ossBucketName.
@@ -43,7 +43,7 @@ type CodeInitParameters struct {
 	OssBucketNameSelector *v1.Selector `json:"ossBucketNameSelector,omitempty" tf:"-"`
 
 	// The name of the OSS Object that stores the function code ZIP package.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.BucketObject
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.BucketObject
 	OssObjectName *string `json:"ossObjectName,omitempty" tf:"oss_object_name,omitempty"`
 
 	// Reference to a BucketObject in oss to populate ossObjectName.
@@ -80,7 +80,7 @@ type CodeParameters struct {
 	Checksum *string `json:"checksum,omitempty" tf:"checksum,omitempty"`
 
 	// The name of the OSS Bucket that stores the function code ZIP package.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +kubebuilder:validation:Optional
 	OssBucketName *string `json:"ossBucketName,omitempty" tf:"oss_bucket_name,omitempty"`
 
@@ -93,7 +93,7 @@ type CodeParameters struct {
 	OssBucketNameSelector *v1.Selector `json:"ossBucketNameSelector,omitempty" tf:"-"`
 
 	// The name of the OSS Object that stores the function code ZIP package.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.BucketObject
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.BucketObject
 	// +kubebuilder:validation:Optional
 	OssObjectName *string `json:"ossObjectName,omitempty" tf:"oss_object_name,omitempty"`
 
@@ -441,8 +441,8 @@ type FunctionInitParameters struct {
 	LayerSelector *v1.Selector `json:"layerSelector,omitempty" tf:"-"`
 
 	// The list of layers.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.LayerVersion
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.Fcv3LayerVersionArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.LayerVersion
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.Fcv3LayerVersionArnExtractor()
 	// +crossplane:generate:reference:refFieldName=LayerRefs
 	// +crossplane:generate:reference:selectorFieldName=LayerSelector
 	Layers []*string `json:"layers,omitempty" tf:"layers,omitempty"`
@@ -460,7 +460,7 @@ type FunctionInitParameters struct {
 	OssMountConfig []OssMountConfigInitParameters `json:"ossMountConfig,omitempty" tf:"oss_mount_config,omitempty"`
 
 	// The user is authorized to the RAM role of function compute. After the configuration, function compute will assume this role to generate temporary access credentials. In the function, you can use the temporary access credentials of the role to access the specified Alibaba cloud service, such as OSS and OTS
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
 	Role *string `json:"role,omitempty" tf:"role,omitempty"`
 
 	// Reference to a Role in ram to populate role.
@@ -695,8 +695,8 @@ type FunctionParameters struct {
 	LayerSelector *v1.Selector `json:"layerSelector,omitempty" tf:"-"`
 
 	// The list of layers.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.LayerVersion
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.Fcv3LayerVersionArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.LayerVersion
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.Fcv3LayerVersionArnExtractor()
 	// +crossplane:generate:reference:refFieldName=LayerRefs
 	// +crossplane:generate:reference:selectorFieldName=LayerSelector
 	// +kubebuilder:validation:Optional
@@ -724,7 +724,7 @@ type FunctionParameters struct {
 	Region *string `json:"region,omitempty" tf:"-"`
 
 	// The user is authorized to the RAM role of function compute. After the configuration, function compute will assume this role to generate temporary access credentials. In the function, you can use the temporary access credentials of the role to access the specified Alibaba cloud service, such as OSS and OTS
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
 	// +kubebuilder:validation:Optional
 	Role *string `json:"role,omitempty" tf:"role,omitempty"`
 
@@ -1213,7 +1213,7 @@ type TracingConfigParameters struct {
 type VPCConfigInitParameters struct {
 
 	// Security group ID
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate securityGroupId.
@@ -1225,7 +1225,7 @@ type VPCConfigInitParameters struct {
 	SecurityGroupIDSelector *v1.Selector `json:"securityGroupIdSelector,omitempty" tf:"-"`
 
 	// VPC network ID
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -1245,7 +1245,7 @@ type VPCConfigInitParameters struct {
 	VSwitchIDSelector *v1.Selector `json:"vSwitchIdSelector,omitempty" tf:"-"`
 
 	// Switch List
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:refFieldName=VSwitchIDRefs
 	// +crossplane:generate:reference:selectorFieldName=VSwitchIDSelector
 	VswitchIds []*string `json:"vswitchIds,omitempty" tf:"vswitch_ids,omitempty"`
@@ -1266,7 +1266,7 @@ type VPCConfigObservation struct {
 type VPCConfigParameters struct {
 
 	// Security group ID
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
@@ -1279,7 +1279,7 @@ type VPCConfigParameters struct {
 	SecurityGroupIDSelector *v1.Selector `json:"securityGroupIdSelector,omitempty" tf:"-"`
 
 	// VPC network ID
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
@@ -1300,7 +1300,7 @@ type VPCConfigParameters struct {
 	VSwitchIDSelector *v1.Selector `json:"vSwitchIdSelector,omitempty" tf:"-"`
 
 	// Switch List
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:refFieldName=VSwitchIDRefs
 	// +crossplane:generate:reference:selectorFieldName=VSwitchIDSelector
 	// +kubebuilder:validation:Optional

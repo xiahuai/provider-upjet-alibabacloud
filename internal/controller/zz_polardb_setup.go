@@ -9,17 +9,17 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	account "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/account"
-	accountprivilege "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/accountprivilege"
-	backuppolicy "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/backuppolicy"
-	cluster "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/cluster"
-	clusterendpoint "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/clusterendpoint"
-	database "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/database"
-	endpoint "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/endpoint"
-	endpointaddress "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/endpointaddress"
-	globaldatabasenetwork "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/globaldatabasenetwork"
-	parametergroup "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/parametergroup"
-	primaryendpoint "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/polardb/primaryendpoint"
+	account "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/account"
+	accountprivilege "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/accountprivilege"
+	backuppolicy "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/backuppolicy"
+	cluster "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/cluster"
+	clusterendpoint "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/clusterendpoint"
+	database "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/database"
+	endpoint "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/endpoint"
+	endpointaddress "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/endpointaddress"
+	globaldatabasenetwork "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/globaldatabasenetwork"
+	parametergroup "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/parametergroup"
+	primaryendpoint "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/polardb/primaryendpoint"
 )
 
 // Setup_polardb creates all controllers with the supplied logger and adds them to

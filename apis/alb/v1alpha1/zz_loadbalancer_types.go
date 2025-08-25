@@ -168,7 +168,7 @@ type LoadBalancerInitParameters struct {
 	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ID of the virtual private cloud (VPC) where the SLB instance is deployed.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -322,7 +322,7 @@ type LoadBalancerParameters struct {
 	Tags map[string]*string `json:"tags,omitempty" tf:"tags,omitempty"`
 
 	// The ID of the virtual private cloud (VPC) where the SLB instance is deployed.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
@@ -380,7 +380,7 @@ type ZoneMappingsInitParameters struct {
 	IntranetAddress *string `json:"intranetAddress,omitempty" tf:"intranet_address,omitempty"`
 
 	// The ID of the vSwitch that corresponds to the zone. Each zone can use only one vSwitch and subnet.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
 
@@ -393,8 +393,8 @@ type ZoneMappingsInitParameters struct {
 	VswitchIDSelector *v1.Selector `json:"vswitchIdSelector,omitempty" tf:"-"`
 
 	// The ID of the zone to which the SLB instance belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.VSwitchZoneIdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.VSwitchZoneIdExtractor()
 	ZoneID *string `json:"zoneId,omitempty" tf:"zone_id,omitempty"`
 
 	// Reference to a Vswitch in vpc to populate zoneId.
@@ -448,7 +448,7 @@ type ZoneMappingsParameters struct {
 	IntranetAddress *string `json:"intranetAddress,omitempty" tf:"intranet_address,omitempty"`
 
 	// The ID of the vSwitch that corresponds to the zone. Each zone can use only one vSwitch and subnet.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	VswitchID *string `json:"vswitchId,omitempty" tf:"vswitch_id,omitempty"`
@@ -462,8 +462,8 @@ type ZoneMappingsParameters struct {
 	VswitchIDSelector *v1.Selector `json:"vswitchIdSelector,omitempty" tf:"-"`
 
 	// The ID of the zone to which the SLB instance belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.VSwitchZoneIdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.VSwitchZoneIdExtractor()
 	// +kubebuilder:validation:Optional
 	ZoneID *string `json:"zoneId,omitempty" tf:"zone_id,omitempty"`
 

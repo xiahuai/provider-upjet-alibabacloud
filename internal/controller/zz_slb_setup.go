@@ -9,8 +9,8 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	acl "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/slb/acl"
-	loadbalancer "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/slb/loadbalancer"
+	acl "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/slb/acl"
+	loadbalancer "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/slb/loadbalancer"
 )
 
 // Setup_slb creates all controllers with the supplied logger and adds them to

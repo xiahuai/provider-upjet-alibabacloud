@@ -25,7 +25,7 @@ type ImageImportDiskDeviceMappingInitParameters struct {
 	Format *string `json:"format,omitempty" tf:"format,omitempty"`
 
 	// The OSS bucket where the image file is stored.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	OssBucket *string `json:"ossBucket,omitempty" tf:"oss_bucket,omitempty"`
 
@@ -38,7 +38,7 @@ type ImageImportDiskDeviceMappingInitParameters struct {
 	OssBucketSelector *v1.Selector `json:"ossBucketSelector,omitempty" tf:"-"`
 
 	// The name (key) of the object that the uploaded image is stored as in the OSS bucket.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.BucketObject
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.BucketObject
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	OssObject *string `json:"ossObject,omitempty" tf:"oss_object,omitempty"`
 
@@ -84,7 +84,7 @@ type ImageImportDiskDeviceMappingParameters struct {
 	Format *string `json:"format,omitempty" tf:"format,omitempty"`
 
 	// The OSS bucket where the image file is stored.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	OssBucket *string `json:"ossBucket,omitempty" tf:"oss_bucket,omitempty"`
@@ -98,7 +98,7 @@ type ImageImportDiskDeviceMappingParameters struct {
 	OssBucketSelector *v1.Selector `json:"ossBucketSelector,omitempty" tf:"-"`
 
 	// The name (key) of the object that the uploaded image is stored as in the OSS bucket.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.BucketObject
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.BucketObject
 	// +crossplane:generate:reference:extractor=github.com/crossplane/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	OssObject *string `json:"ossObject,omitempty" tf:"oss_object,omitempty"`

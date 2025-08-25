@@ -9,8 +9,8 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	cluster "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ackone/cluster"
-	membershipattachment "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/ackone/membershipattachment"
+	cluster "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ackone/cluster"
+	membershipattachment "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ackone/membershipattachment"
 )
 
 // Setup_ackone creates all controllers with the supplied logger and adds them to

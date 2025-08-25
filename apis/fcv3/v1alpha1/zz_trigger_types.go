@@ -34,7 +34,7 @@ type TriggerInitParameters struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Function Name
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
 	FunctionName *string `json:"functionName,omitempty" tf:"function_name,omitempty"`
 
 	// Reference to a Function in fcv3 to populate functionName.
@@ -46,8 +46,8 @@ type TriggerInitParameters struct {
 	FunctionNameSelector *v1.Selector `json:"functionNameSelector,omitempty" tf:"-"`
 
 	// The role required by the event source (such as OSS) to call the function.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.RoleArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.RoleArnExtractor()
 	InvocationRole *string `json:"invocationRole,omitempty" tf:"invocation_role,omitempty"`
 
 	// Reference to a Role in ram to populate invocationRole.
@@ -129,7 +129,7 @@ type TriggerParameters struct {
 	Description *string `json:"description,omitempty" tf:"description,omitempty"`
 
 	// Function Name
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/fcv3/v1alpha1.Function
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/fcv3/v1alpha1.Function
 	// +kubebuilder:validation:Optional
 	FunctionName *string `json:"functionName,omitempty" tf:"function_name,omitempty"`
 
@@ -142,8 +142,8 @@ type TriggerParameters struct {
 	FunctionNameSelector *v1.Selector `json:"functionNameSelector,omitempty" tf:"-"`
 
 	// The role required by the event source (such as OSS) to call the function.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ram/v1alpha1.Role
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.RoleArnExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ram/v1alpha1.Role
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.RoleArnExtractor()
 	// +kubebuilder:validation:Optional
 	InvocationRole *string `json:"invocationRole,omitempty" tf:"invocation_role,omitempty"`
 

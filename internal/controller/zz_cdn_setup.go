@@ -9,9 +9,9 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	domain "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/cdn/domain"
-	domainconfig "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/cdn/domainconfig"
-	fctrigger "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/cdn/fctrigger"
+	domain "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/cdn/domain"
+	domainconfig "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/cdn/domainconfig"
+	fctrigger "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/cdn/fctrigger"
 )
 
 // Setup_cdn creates all controllers with the supplied logger and adds them to

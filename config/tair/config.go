@@ -1,7 +1,7 @@
 package tair
 
 import (
-	"github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common"
+	"github.com/crossplane-contrib/provider-alibabacloud/config/common"
 	"github.com/crossplane/upjet/pkg/config"
 )
 

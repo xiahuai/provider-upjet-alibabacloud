@@ -9,16 +9,16 @@ import (
 
 	"github.com/crossplane/upjet/pkg/controller"
 
-	alias "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/alias"
-	asyncinvokeconfig "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/asyncinvokeconfig"
-	concurrencyconfig "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/concurrencyconfig"
-	customdomain "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/customdomain"
-	function "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/function"
-	functionversion "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/functionversion"
-	layerversion "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/layerversion"
-	provisionconfig "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/provisionconfig"
-	trigger "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/trigger"
-	vpcbinding "github.com/crossplane-contrib/provider-upjet-alibabacloud/internal/controller/fcv3/vpcbinding"
+	alias "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/alias"
+	asyncinvokeconfig "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/asyncinvokeconfig"
+	concurrencyconfig "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/concurrencyconfig"
+	customdomain "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/customdomain"
+	function "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/function"
+	functionversion "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/functionversion"
+	layerversion "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/layerversion"
+	provisionconfig "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/provisionconfig"
+	trigger "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/trigger"
+	vpcbinding "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/fcv3/vpcbinding"
 )
 
 // Setup_fcv3 creates all controllers with the supplied logger and adds them to

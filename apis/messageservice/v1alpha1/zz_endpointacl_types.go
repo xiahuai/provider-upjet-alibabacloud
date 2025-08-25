@@ -23,8 +23,8 @@ type EndpointAclInitParameters struct {
 	Cidr *string `json:"cidr,omitempty" tf:"cidr,omitempty"`
 
 	// Access point type. Value:
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/messageservice/v1alpha1.Endpoint
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/messageservice/v1alpha1.Endpoint
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	EndpointType *string `json:"endpointType,omitempty" tf:"endpoint_type,omitempty"`
 
 	// Reference to a Endpoint in messageservice to populate endpointType.
@@ -64,8 +64,8 @@ type EndpointAclParameters struct {
 	Cidr *string `json:"cidr,omitempty" tf:"cidr,omitempty"`
 
 	// Access point type. Value:
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/messageservice/v1alpha1.Endpoint
-	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-upjet-alibabacloud/config/common.IdExtractor()
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/messageservice/v1alpha1.Endpoint
+	// +crossplane:generate:reference:extractor=github.com/crossplane-contrib/provider-alibabacloud/config/common.IdExtractor()
 	// +kubebuilder:validation:Optional
 	EndpointType *string `json:"endpointType,omitempty" tf:"endpoint_type,omitempty"`
 

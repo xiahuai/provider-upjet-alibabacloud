@@ -19,7 +19,7 @@ type AccessPointInitParameters struct {
 	AccessPointName *string `json:"accessPointName,omitempty" tf:"access_point_name,omitempty"`
 
 	// The Bucket to which the current access point belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 
 	// Reference to a Bucket in oss to populate bucket.
@@ -71,7 +71,7 @@ type AccessPointParameters struct {
 	AccessPointName *string `json:"accessPointName,omitempty" tf:"access_point_name,omitempty"`
 
 	// The Bucket to which the current access point belongs.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/oss/v1alpha1.Bucket
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/oss/v1alpha1.Bucket
 	// +kubebuilder:validation:Optional
 	Bucket *string `json:"bucket,omitempty" tf:"bucket,omitempty"`
 
@@ -123,7 +123,7 @@ type PublicAccessBlockConfigurationParameters struct {
 type VPCConfigurationInitParameters struct {
 
 	// The vpc ID is required only when the value of NetworkOrigin is VPC.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 
 	// Reference to a VPC in vpc to populate vpcId.
@@ -144,7 +144,7 @@ type VPCConfigurationObservation struct {
 type VPCConfigurationParameters struct {
 
 	// The vpc ID is required only when the value of NetworkOrigin is VPC.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.VPC
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.VPC
 	// +kubebuilder:validation:Optional
 	VPCID *string `json:"vpcId,omitempty" tf:"vpc_id,omitempty"`
 

@@ -139,7 +139,7 @@ type EdgeKubernetesInitParameters struct {
 	Runtime map[string]*string `json:"runtime,omitempty" tf:"runtime,omitempty"`
 
 	// The ID of the security group to which the ECS instances in the cluster belong. If it is not specified, a new Security group will be built.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
 	// Reference to a SecurityGroup in ecs to populate securityGroupId.
@@ -202,7 +202,7 @@ type EdgeKubernetesInitParameters struct {
 	WorkerVswitchIDsSelector *v1.Selector `json:"workerVswitchIDsSelector,omitempty" tf:"-"`
 
 	// The vswitches used by workers.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:refFieldName=WorkerVswitchIDsRefs
 	// +crossplane:generate:reference:selectorFieldName=WorkerVswitchIDsSelector
 	WorkerVswitchIds []*string `json:"workerVswitchIds,omitempty" tf:"worker_vswitch_ids,omitempty"`
@@ -466,7 +466,7 @@ type EdgeKubernetesParameters struct {
 	Runtime map[string]*string `json:"runtime,omitempty" tf:"runtime,omitempty"`
 
 	// The ID of the security group to which the ECS instances in the cluster belong. If it is not specified, a new Security group will be built.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/ecs/v1alpha1.SecurityGroup
 	// +kubebuilder:validation:Optional
 	SecurityGroupID *string `json:"securityGroupId,omitempty" tf:"security_group_id,omitempty"`
 
@@ -544,7 +544,7 @@ type EdgeKubernetesParameters struct {
 	WorkerVswitchIDsSelector *v1.Selector `json:"workerVswitchIDsSelector,omitempty" tf:"-"`
 
 	// The vswitches used by workers.
-	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-upjet-alibabacloud/apis/vpc/v1alpha1.Vswitch
+	// +crossplane:generate:reference:type=github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1.Vswitch
 	// +crossplane:generate:reference:refFieldName=WorkerVswitchIDsRefs
 	// +crossplane:generate:reference:selectorFieldName=WorkerVswitchIDsSelector
 	// +kubebuilder:validation:Optional

@@ -11,11 +11,6 @@ SUBPACKAGES ?= monolith
 # Family provider package resolution
 XPKG_SKIP_DEP_RESOLUTION := true
 
-# Batch processing variables (OCI-aligned)
-CONCURRENCY ?= 30
-BUILD_ONLY ?= false
-STORE_PACKAGES ?= ""
-
 export TERRAFORM_VERSION ?= 1.5.7
 
 # Do not allow a version of terraform greater than 1.5.x, due to versions 1.6+ being
@@ -32,6 +27,8 @@ export TERRAFORM_DOCS_PATH ?= website/docs/r
 
 
 PLATFORMS ?= linux_amd64 linux_arm64
+
+export PROJECT_NAME := $(PROJECT_NAME)
 
 # -include will silently skip missing files, which allows us
 # to load those files with a target in the Makefile. If only
@@ -84,6 +81,9 @@ UPTEST_VERSION = v1.1.2
 
 REGISTRY_ORGS ?= xpkg.upbound.io/crossplane-contrib
 IMAGES = $(PROJECT_NAME)
+BATCH_PLATFORMS ?= linux_amd64,linux_arm64
+export BATCH_PLATFORMS := $(BATCH_PLATFORMS)
+
 -include build/makelib/imagelight.mk
 
 # ====================================================================================
@@ -93,7 +93,22 @@ XPKG_REG_ORGS ?= xpkg.upbound.io/crossplane-contrib
 # NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are
 # inferred.
 XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/crossplane-contrib
-XPKGS = $(PROJECT_NAME)
+XPKG_DIR = $(OUTPUT_DIR)/package
+XPKG_IGNORE = kustomization.yaml
+
+export XPKG_REG_ORGS := $(XPKG_REG_ORGS)
+export XPKG_REG_ORGS_NO_PROMOTE := $(XPKG_REG_ORGS_NO_PROMOTE)
+export XPKG_DIR := $(XPKG_DIR)
+export XPKG_IGNORE := $(XPKG_IGNORE)
+
+CONFIG_CRD_GROUP = $(PROVIDER_NAME)
+PROVIDER_AUTH_GROUP = $(PROVIDER_NAME)
+CONFIG_DEPENDENCY_REG_ORG ?= $(XPKG_REG_ORGS)
+
+export CONFIG_CRD_GROUP := $(CONFIG_CRD_GROUP)
+export PROVIDER_AUTH_GROUP := $(PROVIDER_AUTH_GROUP)
+export CONFIG_DEPENDENCY_REG_ORG := $(CONFIG_DEPENDENCY_REG_ORG)
+
 -include build/makelib/xpkg.mk
 
 # ====================================================================================
@@ -109,10 +124,6 @@ XPKGS = $(PROJECT_NAME)
 fallthrough: submodules
 	@echo Initial setup complete. Running make again . . .
 	@make
-
-# NOTE(hasheddan): we force image building to happen prior to xpkg build so that
-# we ensure image is present in daemon.
-xpkg.build.provider-upjet-alibabacloud: do.build.images
 
 # NOTE(hasheddan): we ensure up is installed prior to running platform-specific
 # build steps in parallel to avoid encountering an installation race condition.
@@ -249,19 +260,11 @@ uptest: $(UPTEST) $(KUBECTL) $(CHAINSAW)
 	@KUBECTL=$(KUBECTL) CHAINSAW=$(CHAINSAW) CROSSPLANE_NAMESPACE=$(CROSSPLANE_NAMESPACE) $(UPTEST) e2e "${UPTEST_EXAMPLE_LIST}" --data-source="${UPTEST_DATASOURCE_PATH}" --setup-script=cluster/test/setup.sh --default-conditions="Test" || $(FAIL)
 	@$(OK) running automated tests
 
-local-deploy: build controlplane.up local.xpkg.deploy.provider.$(PROJECT_NAME)
-	@$(INFO) running locally built provider
-	@$(KUBECTL) wait provider.pkg $(PROJECT_NAME) --for condition=Healthy --timeout 5m
-	@$(KUBECTL) -n upbound-system wait --for=condition=Available deployment --all --timeout=5m
-	@$(OK) running locally built provider
+local-deploy: build-provider.monolith local-deploy.monolith
 
 # Family provider build targets
 build-provider.%:
 	@$(MAKE) build SUBPACKAGES="$$(tr ',' ' ' <<< $*)" LOAD_PACKAGES=true
-
-# Build all family providers (convenience target)
-build-family:
-	@$(MAKE) build-provider.ack,ackone,alb,alidns,cdn,cloudmonitorservice,ecs,kms,messageservice,oss,polardb,privatelink,quotas,ram,tair,vpc
 
 # Family provider local deployment targets
 local-deploy.%: controlplane.up
@@ -345,34 +348,7 @@ schema-version-diff:
 	./scripts/version_diff.py config/generated.lst "$(WORK_DIR)/schema.json.$${PREV_PROVIDER_VERSION}" config/schema.json
 	@$(OK) Checking for native state schema version changes
 
-# ====================================================================================
-# Family Provider Publishing
-
-# publish-family-provider: Publish a smaller scoped provider to Upbound Marketplace
-# Usage: make publish-family-provider PROVIDER_SERVICE=vpc
-# This will build package and prepare for publishing
-publish-family-provider: build-provider.$(PROVIDER_SERVICE)
-	@$(INFO) Publishing family provider: $(PROJECT_NAME)-$(PROVIDER_SERVICE)
-	@if [ -z "$(PROVIDER_SERVICE)" ]; then \
-		echo "Error: PROVIDER_SERVICE must be specified (e.g., PROVIDER_SERVICE=vpc)"; \
-		exit 1; \
-	fi
-	@$(INFO) Step 1: Checking if repository exists...
-	@if ! up repository get $(PROJECT_NAME)-$(PROVIDER_SERVICE) >/dev/null 2>&1; then \
-		echo "Repository $(PROJECT_NAME)-$(PROVIDER_SERVICE) does not exist."; \
-		echo "To create it, run: up repository create $(PROJECT_NAME)-$(PROVIDER_SERVICE) --public"; \
-		exit 1; \
-	else \
-		$(INFO) Repository $(PROJECT_NAME)-$(PROVIDER_SERVICE) exists; \
-	fi
-	@$(INFO) Step 2: Building package complete
-	@$(INFO) Step 3: Package ready for publishing at:
-	@echo "  _output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$(PROVIDER_SERVICE)-$(VERSION).xpkg"
-	@$(INFO) Step 4: To publish, run:
-	@echo "  crossplane xpkg push $(XPKG_REG_ORGS)/$(PROJECT_NAME)-$(PROVIDER_SERVICE):$(VERSION) -f _output/xpkg/$(PLATFORM)/$(PROJECT_NAME)-$(PROVIDER_SERVICE)-$(VERSION).xpkg"
-	@$(OK) Family provider $(PROJECT_NAME)-$(PROVIDER_SERVICE) ready for publishing
-
-.PHONY: cobertura submodules fallthrough run crds.clean publish-family-provider
+.PHONY: cobertura submodules fallthrough run crds.clean
 
 # ====================================================================================
 # Special Targets
@@ -393,7 +369,7 @@ crossplane.help:
 
 help-special: crossplane.help
 
-.PHONY: crossplane.help help-special publish-family-provider
+.PHONY: crossplane.help help-special
 
 # TODO(negz): Update CI to use these targets.
 vendor: modules.download

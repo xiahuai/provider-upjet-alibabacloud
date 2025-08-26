@@ -78,7 +78,7 @@ batch-process: $(UP)
 		--examples-root $(ROOT_DIR)/examples \
 		--examples-group-override monolith=* --examples-group-override config=providerconfig \
 		--crd-root $(ROOT_DIR)/package/crds \
-		--crd-group-override monolith=* --crd-group-override config=$(PROVIDER_NAME) \
+		--crd-group-override monolith=* --crd-group-override config=$(CONFIG_CRD_GROUP) \
 		--package-metadata-template $(ROOT_DIR)/package/crossplane.yaml.tmpl \
 		--template-var XpkgRegOrg=$(XPKG_REG_ORGS) --template-var DepConstraint="$(DEP_CONSTRAINT)" --template-var ProviderName=$(PROVIDER_NAME) \
 		--concurrency $(CONCURRENCY) \

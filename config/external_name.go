@@ -204,6 +204,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// SLB
 	"alicloud_slb_acl":           config.IdentifierFromProvider,
 	"alicloud_slb_load_balancer": config.IdentifierFromProvider,
+	"alicloud_slb_listener":      config.IdentifierFromProvider,
 
 	// Tair
 	"alicloud_kvstore_account":          config.IdentifierFromProvider,

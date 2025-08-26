@@ -22,4 +22,13 @@ func Configure(p *config.Provider) {
 		delete(r.TerraformResource.Schema, "name")
 		delete(r.TerraformResource.Schema, "specification")
 	})
+	p.AddResourceConfigurator("alicloud_slb_listener", func(r *config.Resource) {
+		r.References["acl_ids"] = config.Reference{
+			TerraformName: "alicloud_slb_acl",
+			// RefFieldName:      "AclRefs",
+			// SelectorFieldName: "AclSelector",
+		}
+		delete(r.TerraformResource.Schema, "acl_id")
+		delete(r.TerraformResource.Schema, "ssl_certificate_id")
+	})
 }

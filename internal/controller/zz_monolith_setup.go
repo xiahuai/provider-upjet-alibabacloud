@@ -166,6 +166,7 @@ import (
 	usergroupattachment "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ram/usergroupattachment"
 	userpolicyattachment "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/ram/userpolicyattachment"
 	aclslb "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/slb/acl"
+	listenerslb "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/slb/listener"
 	loadbalancerslb "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/slb/loadbalancer"
 	accounttair "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/tair/account"
 	auditlogconfig "github.com/crossplane-contrib/provider-alibabacloud/internal/controller/tair/auditlogconfig"
@@ -338,6 +339,7 @@ func Setup_monolith(mgr ctrl.Manager, o controller.Options) error {
 		usergroupattachment.Setup,
 		userpolicyattachment.Setup,
 		aclslb.Setup,
+		listenerslb.Setup,
 		loadbalancerslb.Setup,
 		accounttair.Setup,
 		auditlogconfig.Setup,

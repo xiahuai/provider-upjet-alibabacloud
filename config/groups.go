@@ -213,6 +213,7 @@ var GroupMap = map[string]GroupKindCalculator{
 	// SLB - Server Load Balancer resources
 	"alicloud_slb_acl":           ReplaceGroupWords("slb", 1),
 	"alicloud_slb_load_balancer": ReplaceGroupWords("slb", 1),
+	"alicloud_slb_listener":      ReplaceGroupWords("slb", 1),
 
 	// TAIR - Redis Tair resources
 	"alicloud_kvstore_account":          ReplaceGroupWords("tair", 1),

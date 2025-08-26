@@ -11,9 +11,85 @@ import (
 	v1alpha1 "github.com/crossplane-contrib/provider-alibabacloud/apis/vpc/v1alpha1"
 	common "github.com/crossplane-contrib/provider-alibabacloud/config/common"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
+	resource "github.com/crossplane/upjet/pkg/resource"
 	errors "github.com/pkg/errors"
 	client "sigs.k8s.io/controller-runtime/pkg/client"
 )
+
+// ResolveReferences of this Listener.
+func (mg *Listener) ResolveReferences(ctx context.Context, c client.Reader) error {
+	r := reference.NewAPIResolver(c, mg)
+
+	var rsp reference.ResolutionResponse
+	var mrsp reference.MultiResolutionResponse
+	var err error
+
+	mrsp, err = r.ResolveMultiple(ctx, reference.MultiResolutionRequest{
+		CurrentValues: reference.FromPtrValues(mg.Spec.ForProvider.ACLIds),
+		Extract:       reference.ExternalName(),
+		References:    mg.Spec.ForProvider.ACLIdsRefs,
+		Selector:      mg.Spec.ForProvider.ACLIdsSelector,
+		To: reference.To{
+			List:    &ACLList{},
+			Managed: &ACL{},
+		},
+	})
+	if err != nil {
+		return errors.Wrap(err, "mg.Spec.ForProvider.ACLIds")
+	}
+	mg.Spec.ForProvider.ACLIds = reference.ToPtrValues(mrsp.ResolvedValues)
+	mg.Spec.ForProvider.ACLIdsRefs = mrsp.ResolvedReferences
+
+	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
+		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.LoadBalancerID),
+		Extract:      resource.ExtractResourceID(),
+		Reference:    mg.Spec.ForProvider.LoadBalancerIDRef,
+		Selector:     mg.Spec.ForProvider.LoadBalancerIDSelector,
+		To: reference.To{
+			List:    &LoadBalancerList{},
+			Managed: &LoadBalancer{},
+		},
+	})
+	if err != nil {
+		return errors.Wrap(err, "mg.Spec.ForProvider.LoadBalancerID")
+	}
+	mg.Spec.ForProvider.LoadBalancerID = reference.ToPtrValue(rsp.ResolvedValue)
+	mg.Spec.ForProvider.LoadBalancerIDRef = rsp.ResolvedReference
+
+	mrsp, err = r.ResolveMultiple(ctx, reference.MultiResolutionRequest{
+		CurrentValues: reference.FromPtrValues(mg.Spec.InitProvider.ACLIds),
+		Extract:       reference.ExternalName(),
+		References:    mg.Spec.InitProvider.ACLIdsRefs,
+		Selector:      mg.Spec.InitProvider.ACLIdsSelector,
+		To: reference.To{
+			List:    &ACLList{},
+			Managed: &ACL{},
+		},
+	})
+	if err != nil {
+		return errors.Wrap(err, "mg.Spec.InitProvider.ACLIds")
+	}
+	mg.Spec.InitProvider.ACLIds = reference.ToPtrValues(mrsp.ResolvedValues)
+	mg.Spec.InitProvider.ACLIdsRefs = mrsp.ResolvedReferences
+
+	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
+		CurrentValue: reference.FromPtrValue(mg.Spec.InitProvider.LoadBalancerID),
+		Extract:      resource.ExtractResourceID(),
+		Reference:    mg.Spec.InitProvider.LoadBalancerIDRef,
+		Selector:     mg.Spec.InitProvider.LoadBalancerIDSelector,
+		To: reference.To{
+			List:    &LoadBalancerList{},
+			Managed: &LoadBalancer{},
+		},
+	})
+	if err != nil {
+		return errors.Wrap(err, "mg.Spec.InitProvider.LoadBalancerID")
+	}
+	mg.Spec.InitProvider.LoadBalancerID = reference.ToPtrValue(rsp.ResolvedValue)
+	mg.Spec.InitProvider.LoadBalancerIDRef = rsp.ResolvedReference
+
+	return nil
+}
 
 // ResolveReferences of this LoadBalancer.
 func (mg *LoadBalancer) ResolveReferences(ctx context.Context, c client.Reader) error {

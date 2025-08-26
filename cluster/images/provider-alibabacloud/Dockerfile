@@ -1,10 +1,8 @@
-FROM alpine:3.20.3
+FROM alpine:3.22.1
 RUN apk --no-cache add ca-certificates bash
 
 ARG TARGETOS
 ARG TARGETARCH
-
-ADD "bin/${TARGETOS}_${TARGETARCH}/monolith" /usr/local/bin/provider
 
 ENV USER_ID=65532
 
